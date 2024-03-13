@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,27 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мероприятия</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* Кастомные стили */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .menu {
-      background-color: #007bff;
-      padding: 10px;
-      color: #fff;
-    }
-    .menu a {
-      color: #fff;
-      margin-right: 10px;
-    }
-    .main-block {
-      margin-top: 20px;
-    }
-    .event-card {
-      margin-bottom: 20px;
-    }
-  </style>
+  <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet" />
 </head>
 <body>
   <!-- Меню -->
@@ -41,7 +22,7 @@
   <!-- Основной блок -->
   <div class="container main-block">
     <!-- Ближайшие мероприятия -->
-    <h2>Ближайшие мероприятия</h2>
+    <h2>Ближайшее мероприятие</h2>
     <div class="row">
       <div class="col-md-4">
         <div class="card event-card">
@@ -53,7 +34,7 @@
           </div>
         </div>
       </div>
-      <!-- Другие ближайшие мероприятия -->
+      <!-- Другие ближайшее мероприятие -->
       <!-- Здесь можно добавить еще карточки с другими ближайшими мероприятиями -->
     </div>
 
