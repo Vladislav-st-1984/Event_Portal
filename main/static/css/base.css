@@ -2,9 +2,10 @@
     /* Кастомные стили */
     body {
       font-family: Arial, sans-serif;
+      background: #81d4e1;
     }
     .menu {
-      background-color: #007bff;
+      background-color: #61ccad;
       padding: 10px;
       color: #fff;
     }
