@@ -17,7 +17,7 @@
       <h1>Название сайта</h1>
       <a href="#">Главная</a>
       <a href="#">Список Мероприятий</a>
-      <a href="{% url 'profile' %}">Профиль</a>
+      <a href="{% url 'profile' request.user.pk %}">Профиль</a>
     </div>
   </div>
 

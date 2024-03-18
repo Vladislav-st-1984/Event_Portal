@@ -21,15 +21,14 @@
                     <h4 class="text-right">Настройка профиля</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Имя</label><input type="text" class="form-control" placeholder="Имя" value=""></div>
-                    <div class="col-md-6"><label class="labels">Фамилия</label><input type="text" class="form-control" value="" placeholder="Фамилия"></div>
-                    <div class="col-md-6"><label class="labels">Отчество</label><input type="text" class="form-control" value="" placeholder="Отчество"></div>
+                    <div class="col-md-6"><label class="labels">Имя</label><p type="text" class="form-control">{{ user.first_name }}</p></div>
+                    <div class="col-md-6"><label class="labels">Фамилия</label><p type="text" class="form-control">{{ user.last_name }}</p></div>
+                    <div class="col-md-6"><label class="labels">Отчество</label><p type="text" class="form-control">{{ user.middle_name }}</p></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Номер телефона</label><input type="text" class="form-control" placeholder="+8(123)456-78-90" value=""></div>
-                    <div class="col-md-12"><label class="labels">Группа</label><input type="text" class="form-control" placeholder="ваша учебная группа" value=""></div>
-                    <div class="col-md-12"><label class="labels">Электронная почта студента</label><input type="text" class="form-control" placeholder="isip_a.a.ivanov@gmail.com" value=""></div>
-                    <div class="col-md-12"><label class="labels">Личная электронная почта</label><input type="text" class="form-control" placeholder="a.a.ivanov@mail.com" value=""></div>
+                    <div class="col-md-12"><label class="labels">Номер телефона</label><p type="text" class="form-control">{{ user.phone }}</p></div>
+                    <div class="col-md-12"><label class="labels">Электронная почта студента</label><p type="text" class="form-control">{{ user.stud_email }}</p></div>
+                    <div class="col-md-12"><label class="labels">Личная электронная почта</label><p type="text" class="form-control">{{ user.email }}</p></div>
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
             </div>

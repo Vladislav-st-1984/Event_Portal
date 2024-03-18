@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 
 ## регистрация пользователя
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, TemplateView
 
 from main.forms import CreateUserForm, LoginUserForm
 from main.models import Users
@@ -66,6 +66,21 @@ def eventfunc(request):
 def enentinfofunc(request):
     return render(request, 'main/Eventsinfo.html')
 
+#
+# def profilefunc(request):
+#     return render(request, 'main/profile.html')
 
-def profilefunc(request):
-    return render(request, 'main/profile.html')
+
+class Profile(DataMixin, TemplateView):
+    model = Users
+    template_name = 'main/profile.html'
+    # fields = ['avatar']
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_content(title="Твой профиль", user=self.request.user)
+        return dict(list(context.items()) + list(c_def.items()))
+
+    # def get_success_url(self, *args, **kwargs):
+    #     return reverse_lazy('profile', args=[self.kwargs['pk']])  ## передаем "слагом" пк юзера
+
