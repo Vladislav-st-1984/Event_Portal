@@ -1,10 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-63565464566
-</body>
-</html>
+{#TODO: ДОДЕЛАТЬ СТРАНИЦУ ДО ПОЛНОГО СОСТОЯНИЯ(ВСЕ КУСОЧКИ ИЗ ТИЛЬДЫ)#}
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block cssfiles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link type="text/css" href="{% static 'css/Eventsinfo.css' %}" rel="stylesheet"/>
+    <link href="../../static/css/t-normalize.min.css?v=38294" rel="stylesheet">
+    <link href="../../static/css/t-page-all.min.css?v=38294" rel="stylesheet">
+	<link href="../../static/css/t-page-edit-all.min.css?v=38294" rel="stylesheet">
+
+
+	<link href="../../static/css/t-common.min.css?v=38294" rel="stylesheet">
+	<link href="../../static/css/td-uikit.min.css?v=38294" rel="stylesheet">
+
+	<link href="../../static/css/t-futurapt.min.css?v=38294" rel="stylesheet">
+
+	<link href="../../static/css/t-popups.min.css?v=38294" rel="stylesheet">
+
+	<link href="../../static/css/t-project-settings.min.css?v=38294" rel="stylesheet">
+    <link href="../../static/css/t-upload.min.css?v=38294" type="text/css" rel="stylesheet" />
+
+    <link href="../../static/css/t-colorpicker.min.css?v=38294" type="text/css" rel="stylesheet" />
+
+
+
+    <link href="https://front.tildacdn.com/plugins/selectbox/t-selectbox.min.css?v=38294" rel="stylesheet">
+    <script src="https://front.tildacdn.com/plugins/selectbox/t-selectbox.min.js?v=38294" async=""></script>
+
+	<link href="https://front.tildacdn.com/plugins/previewbox/t-previewbox.min.css?v=38294" rel="stylesheet">
+	<script src="https://front.tildacdn.com/plugins/previewbox/t-previewbox.min.js?v=38294" async=""></script>
+
+	<link href="https://front.tildacdn.com/plugins/shadowpicker/t-shadowpicker.min.css?v=38294" rel="stylesheet">
+	<script src="https://front.tildacdn.com/plugins/shadowpicker/t-shadowpicker.min.js?v=38294" async=""></script>
+
+    	<link href="https://static.tildacdn.com/css/tilda-cards-1.0.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/tilda-forms-1.0.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/tilda-cover-1.0.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/tilda-slds-1.4.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/tilda-carousel-1.0.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/ya-share.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/carousel-btstrp.min.css" rel="stylesheet" media="screen">
+	<link href="https://static.tildacdn.com/css/tilda-zero-gallery-1.0.min.css" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+    <!-- Меню -->
+    <div class="menu">
+        <div class="container">
+            <h1>Название сайта</h1>
+            <a href="#">Главная</a>
+            <a href="#">Список Мероприятий</a>
+            <a href="{% url 'profile' request.user.pk %}">Профиль</a>
+        </div>
+    </div>
+
+    <div class="t497">
+
+
+        <ul role="list" class="t497__container t-container">
+
+
+            <li class="t497__col t-col t-col_4  t497__col_first t-item t-list__item"
+                style="margin-top:45px;">
+
+                <div class="t497__item">
+                    <div class="t-cell t-valign_top">
+                        <div class="t497__imgwrapper">
+                            <img class="t497__img  t-img"
+                                 src="https://static.tildacdn.com/tild3466-3337-4138-b164-616538663563/8yo_hours.svg"
+                                 imgfield="li_img__1476973323713"
+                                 style="max-width: 40px; max-height: 40px" alt="">
+                        </div>
+                    </div>
+                    <div class="t497__textwrapper t-cell t-valign_top">
+                        <div class="t497__name t-name t-name_lg" field="li_title__1476973323713">23 АВГУСТА, 19.00</div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="t497__col t-col t-col_5   t-item t-list__item"
+                style="margin-top:45px;">
+
+                <div class="t497__item">
+                    <div class="t-cell t-valign_top">
+                        <div class="t497__imgwrapper">
+                            <img class="t497__img  t-img"
+                                 src="https://static.tildacdn.com/tild3132-6261-4264-b630-356133396331/education_location.svg"
+                                 imgfield="li_img__1476973326928"
+                                 data-tu-max-width="50" data-tu-max-height="50" alt="">
+                        </div>
+                    </div>
+                    <div class="t497__textwrapper t-cell t-valign_top">
+                        <div class="t497__name t-name t-name_lg" field="li_title__1476973326928">БИЗНЕС ЦЕНТР ДЕМИДОВ
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    63565464566
+    </body>
+    </html>
+{% endblock %}

@@ -1,0 +1,291 @@
+.tc-treelist__folder__title-wrapper {
+    display: flex;
+    padding: 4px 8px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.tc-treelist__arrow, .tc-treelist__arrow_opened {
+    display: block;
+    height: 20px;
+}
+
+.tc-treelist__arrow {
+    width: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cg clip-path='url(%23clip0_2389_4781)'%3E%3Cpath d='M1 1L5 5L9 1' stroke='black'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2389_4781'%3E%3Crect width='10' height='6' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") center center no-repeat;
+    flex-shrink: 0;
+    transform: rotate(-90deg);
+}
+
+.tc-treelist__arrow_opened {
+    transform: rotate(0deg);
+}
+
+.tc-treelist__pagelist__folder_current .tc-treelist__folder__title-wrapper {
+    background-color: rgb(232, 232, 232);
+    border-radius: 2px;
+}
+
+.tc-treelist__folder__title-wrapper:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+.tc-treelist__folder__title-wrapper:hover a {
+    color: rgb(0, 0, 0);
+}
+
+.tc-treelist__folder__title-wrapper > a::before {
+    content: "";
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M6.28333 2.90909L5.93247 2.41838C5.74473 2.15581 5.4418 2 5.11901 2H2C1.44772 2 1 2.44772 1 3V11C1 11.5523 1.44772 12 2 12H13C13.5523 12 14 11.5523 14 11V4.68485C14 4.2062 13.612 3.81818 13.1333 3.81818V3.81818M6.28333 2.90909L6.63419 3.3998C6.82193 3.66238 7.12487 3.81818 7.44765 3.81818H13.1333M6.28333 2.90909H12.0689C12.4544 2.90909 12.8057 3.13076 12.9716 3.47881L13.1333 3.81818' stroke='black'/%3E%3Cpath d='M4.00118 8.95402C3.96895 7.66667 4.60279 7 5.43 7C5.93493 7 6.32168 7.17241 7.13815 7.58621C7.73976 7.89655 8.18022 8.12644 8.63143 8.12644C9.06115 8.12644 9.26527 7.74713 9.27602 7.04598H9.9958C10.0603 8.48276 9.3727 9 8.62069 9C8.13725 9 7.70753 8.85057 6.88031 8.43678C6.31093 8.13793 5.87047 7.87356 5.44075 7.87356C5.01102 7.87356 4.74245 8.1954 4.7317 8.97701H4.00118V8.95402Z' fill='black'/%3E%3C/svg%3E") center center no-repeat;
+}
+
+.tc-treelist__folder__title {
+    flex-grow: 1;
+}
+
+.tc-treelist__page-list-folder__pages {
+    display: none;
+    margin-bottom: 6px;
+    padding-left: 21px;
+}
+
+.tc-treelist__page-list-folder__pages_opened {
+    display: block !important;
+}
+
+.tc-treelist__page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.tc-treelist__page:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+.tc-treelist__page a {
+    color: rgb(0, 0, 0);
+}
+
+.tc-treelist__page_current {
+    background-color: rgba(0, 0, 0, 0.09);
+    border-radius: 2px;
+}
+
+.tc-treelist__page__title {
+    padding: 4px 8px;
+}
+
+.tc-treelist__page__title, .tc-treelist__page__title:hover {
+    flex-grow: 1;
+}
+
+.tc-treelist__page__icon {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0px 7px -2px 2px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M8.05 1H3C2.44772 1 2 1.44772 2 2V13C2 13.5523 2.44771 14 3 14H12C12.5523 14 13 13.5523 13 13V5.5M8.05 1L13 5.5M8.05 1V4.5C8.05 5.05228 8.49772 5.5 9.05 5.5H13M5 8.5H10M5 10.5H10' stroke='black'/%3E%3C/svg%3E");
+}
+
+.tc-treelist__page__icon_index {
+    background-image: url("/tpl/img/td-icon-home.png");
+    background-size: 10px;
+    background-position-y: 100%;
+}
+
+.tc-treelist__page__icon_header {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M1 13V6M14 13V6M1 6V4C1 3.44772 1.44772 3 2 3H13C13.5523 3 14 3.44772 14 4V6M1 6H14' stroke='black'/%3E%3Cpath d='M3 4.5C3 4.77614 2.77614 5 2.5 5C2.22386 5 2 4.77614 2 4.5C2 4.22386 2.22386 4 2.5 4C2.77614 4 3 4.22386 3 4.5Z' fill='black'/%3E%3Cpath d='M4 4.5C4 4.77614 3.77614 5 3.5 5C3.22386 5 3 4.77614 3 4.5C3 4.22386 3.22386 4 3.5 4C3.77614 4 4 4.22386 4 4.5Z' fill='black'/%3E%3Cpath d='M5 4.5C5 4.77614 4.77614 5 4.5 5C4.22386 5 4 4.77614 4 4.5C4 4.22386 4.22386 4 4.5 4C4.77614 4 5 4.22386 5 4.5Z' fill='black'/%3E%3C/svg%3E");
+}
+
+.tc-treelist__page__icon_footer {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M14 3L14 6L14 12C14 12.5523 13.5523 13 13 13L2 13C1.44772 13 1 12.5523 1 12L1 6L1 3M4 7.5L11 7.5M4 9.5L11 9.5' stroke='black'/%3E%3C/svg%3E");
+}
+
+.tc-treelist__page__icon_404 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15' fill='none'%3E%3Cpath d='M1 6V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V6M1 6V4C1 3.44772 1.44772 3 2 3H13C13.5523 3 14 3.44772 14 4V6M1 6H14M6 8L9.5 11.5M6 11.5L9.5 8' stroke='black'/%3E%3Cpath d='M3 4.5C3 4.77614 2.77614 5 2.5 5C2.22386 5 2 4.77614 2 4.5C2 4.22386 2.22386 4 2.5 4C2.77614 4 3 4.22386 3 4.5Z' fill='black'/%3E%3Cpath d='M4 4.5C4 4.77614 3.77614 5 3.5 5C3.22386 5 3 4.77614 3 4.5C3 4.22386 3.22386 4 3.5 4C3.77614 4 4 4.22386 4 4.5Z' fill='black'/%3E%3Cpath d='M5 4.5C5 4.77614 4.77614 5 4.5 5C4.22386 5 4 4.77614 4 4.5C4 4.22386 4.22386 4 4.5 4C4.77614 4 5 4.22386 5 4.5Z' fill='black'/%3E%3C/svg%3E");
+}
+
+.tc-treelist__page_unpublished .tc-treelist__page__icon {
+    opacity: 0.3;
+}
+
+.tc-treelist__page_changed .tc-treelist__page__icon::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.tc-treelist__page_current.tc-treelist__page_changed .tc-treelist__page__icon::before {
+    border-color: rgb(229, 229, 229);
+}
+
+.tc-treelist__page:hover .tc-treelist__page__icon::before {
+    border-color: rgb(242, 242, 242);
+}
+
+.tc-treelist__page_changed .tc-treelist__page__icon::before {
+    background-color: rgb(8, 142, 209);
+}
+
+.tc-treelist__page__home {
+    padding-right: 5px;
+    padding-bottom: 3px;
+}
+
+.tc-treelist__page__title_current {
+    font-weight: 600;
+}
+
+.tc-treelist__page__options {
+    display: none;
+    margin-right: 8px;
+}
+
+.tc-treelist__page:hover .tc-treelist__page__options {
+    display: flex;
+}
+
+.tc-treelist__page__option {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.tc-treelist__page__option:last-child {
+    margin-right: 0px;
+}
+
+.tc-treelist__setting__button {
+    background: url("/tpl/img/popups/all-icons.svg") -127px -19px no-repeat;
+}
+
+.tc-treelist__add-page__button {
+    width: 12px;
+    height: 12px;
+    padding: 3px;
+    margin: 1px 0px;
+    border-radius: 2px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 17 17' fill='none'%3E%3Crect width='17' height='17' rx='2' fill='%23ff8562'/%3E%3Cline x1='5.03847' y1='8.49998' x2='11.8846' y2='8.49998' stroke='white' stroke-width='1.15385' stroke-linecap='round'/%3E%3Cline x1='8.50002' y1='5.03847' x2='8.50002' y2='11.8846' stroke='white' stroke-width='1.15385' stroke-linecap='round'/%3E%3C/svg%3E") center center no-repeat;
+}
+
+.tc-treelist__page__highlight {
+    height: 30px;
+}
+
+.tc-treelist__pagelist__no-pages-in-project, .tc-treelist__folder__no-pages {
+    color: rgba(0, 0, 0, 0.4);
+    padding: 4px 8px 6px;
+}
+
+.tc-treelist__folder__no-pages_hidden {
+    display: none;
+}
+
+.tc-treelist__page__wrapper_hidden, .tc-treelist__pagelist__folder_hidden, .tc-treelist__pagelist__no-pages_hidden, .tc-treelist__page_hidden {
+    display: none !important;
+}
+
+.tc-treelist__dropbar div {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(213, 233, 246);
+    opacity: 0;
+    transition: all 100ms ease-in-out 0s;
+}
+
+.tc-treelist__dropbar_visible div {
+    opacity: 1;
+}
+
+.tc-treelist__drag-image:not(.tsort__drag-image_counter) {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+    background-color: rgb(255, 255, 255);
+    font-family: tfutura, Arial;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.tc-treelist__drag-image .tc-treelist__page__title_current {
+    font-weight: 400;
+}
+
+.tc-treelist__drag-image.tc-treelist__page_current .tc-treelist__page__icon::before {
+    border-color: rgb(255, 255, 255);
+}
+
+.tc-treelist__drag-image .tc-sidebar__project__name {
+    background-color: rgb(255, 255, 255);
+}
+
+.tc-treelist__drag-image .tc-treelist__arrow, .tc-treelist__drag-image .tc-sidebar__arrow, .tc-treelist__drag-image .tc-sidebar__pagelist__wrapper {
+    display: none;
+}
+
+.tc-treelist__droparea {
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.tc-treelist__droparea_visible {
+    background-color: rgba(8, 142, 209, 0.15);
+}
+
+.tc__treelist__multiple_selected, .tc__treelist__multiple_selected:hover {
+    background-color: rgb(213, 233, 246);
+    border-radius: 2px;
+}
+
+.tc__treelist__multiple_selected .tc-treelist__page__icon::before, .tc__treelist__multiple_selected:hover .tc-treelist__page__icon::before, .tc-treelist__page_current.tc__treelist__multiple_selected .tc-treelist__page__icon::before {
+    border-color: rgb(213, 233, 246);
+}
+
+.tc-treelist__tooltip_noir {
+    border-radius: 3px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.tc-treelist__tooltip_noir .tooltipster-content {
+    margin: 6px 12px;
+    font-family: tfutura, Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: rgb(204, 204, 204);
+}
+
+.tc-treelist__tooltip_noir .tooltipster-content a {
+    font-weight: 600;
+    text-decoration: underline !important;
+    color: rgb(255, 255, 255) !important;
+}
