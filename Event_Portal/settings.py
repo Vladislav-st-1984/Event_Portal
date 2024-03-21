@@ -56,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 AUTH_USER_MODEL = 'main.Users'
+AUTHENTICATION_BACKENDS = ['main.backends.EmailBackend']
 ROOT_URLCONF = 'Event_Portal.urls'
 
 TEMPLATES = [

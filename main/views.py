@@ -1,5 +1,5 @@
 from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect
 
 
@@ -14,6 +14,9 @@ from main.models import Users
 from main.utils import DataMixin
 
 
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
 class RegisterUser(DataMixin, BSModalCreateView):
     form_class = CreateUserForm
     template_name = 'main/create_user.html'
@@ -26,9 +29,16 @@ class RegisterUser(DataMixin, BSModalCreateView):
 
     ## функция, вызывающаяся при валидности формы
     def form_valid(self, form):
-        # if not self.request.is_ajax():
-        user = form.save()  ## сохранение формы
-        login(self.request, user)  ## авто-логин пользователя при регистрации
+        if not is_ajax(self.request):
+            form.save()
+            stud_email = form.cleaned_data.get('stud_email')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=stud_email, password=raw_password)
+
+            print(f'stud_email - {stud_email}')
+            print(f'raw_password - {raw_password}')
+            print(f'user - {user}')
+            login(self.request, user)  ## авто-логин пользователя при регистрации
         return redirect('home')
 
 

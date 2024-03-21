@@ -18,8 +18,8 @@ class CreateUserForm(PopRequestMixin, CreateUpdateAjaxMixin, UserCreationForm):
 
 ## форма логина
 class LoginUserForm(AuthenticationForm):
-    username = forms.CharField(label='Логин', widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': 'Логин', 'type': 'text', "autocomplete": "username"}))
+    username = forms.CharField(label='Учебная почта', widget=forms.EmailInput(
+        attrs={'class': 'form-control', 'placeholder': 'Учебная почта', 'type': 'text', "autocomplete": "stud_email"}))
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(
         attrs={'class': 'form-control', 'placeholder': 'Пароль', 'type': 'password'}))
 
