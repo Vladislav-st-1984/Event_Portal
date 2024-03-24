@@ -7,122 +7,124 @@
 {% endblock %}
 
 {% block cssfiles %}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link type="text/css" href="{% static 'css/base.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link type="text/css" href="{% static 'css/base.css' %}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
-  <!-- Меню -->
-  <div class="menu">
-    <div class="container">
-      <h1>Название сайта</h1>
-      <a href="#">Главная</a>
-      <a href="#">Список Мероприятий</a>
-      <a href="{% url 'profile' request.user.pk %}">Профиль</a>
-    </div>
-  </div>
-
-  <!-- Основной блок -->
-  <div class="container main-block">
-    <!-- Ближайшие мероприятия -->
-    <h2>Ближайшее мероприятие</h2>
-    <div class="row">
-      <div class="col-md-9">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary"> <a style="color: #e0e0e0!important;" href="{%  url 'eventsinfo' %}">Подробнее</a></button>
-          </div>
+    <!-- Меню -->
+    <div class="menu">
+        <div class="container">
+            <h1>Название сайта</h1>
+            <a href="#">Главная</a>
+            <a href="#">Список Мероприятий</a>
+            <a href="{% url 'profile' request.user.pk %}">Профиль</a>
         </div>
-      </div>
-      <!-- Другие ближайшее мероприятие -->
-      <!-- Здесь можно добавить еще карточки с другими ближайшими мероприятиями -->
     </div>
 
-    <!-- Будущие мероприятия -->
-    <h2>Будущие мероприятия</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
+    <!-- Основной блок -->
+    <div class="container main-block">
+        <!-- Ближайшие мероприятия -->
+        <h2>Ближайшее мероприятие</h2>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary"><a style="color: #e0e0e0!important;"
+                                                                         href="{% url 'eventsinfo' %}">Подробнее</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Другие ближайшее мероприятие -->
+            <!-- Здесь можно добавить еще карточки с другими ближайшими мероприятиями -->
         </div>
-      </div>
 
-              <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
+        <!-- Будущие мероприятия -->
+        <h2>Будущие мероприятия</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Другие будущие мероприятия -->
+            <!-- Здесь можно добавить еще карточки с другими будущими мероприятиями -->
         </div>
-      </div>
-              <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
+
+        <!-- Прошедшие мероприятия -->
+        <h2>Прошедшие мероприятия</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card event-card">
+                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Название мероприятия</h5>
+                        <p class="card-text">Дата и место проведения</p>
+                        <p class="card-text">Описание мероприятия</p>
+                        <button type="button" class="btn btn-primary">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Другие прошедшие мероприятия -->
+            <!-- Здесь можно добавить еще карточки с другими прошедшими мероприятиями -->
         </div>
-      </div>
-      <!-- Другие будущие мероприятия -->
-      <!-- Здесь можно добавить еще карточки с другими будущими мероприятиями -->
     </div>
-
-    <!-- Прошедшие мероприятия -->
-    <h2>Прошедшие мероприятия</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
-        </div>
-      </div>
-
-             <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
-        </div>
-      </div>
-
-             <div class="col-md-4">
-        <div class="card event-card">
-          <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Название мероприятия</h5>
-            <p class="card-text">Дата и место проведения</p>
-            <p class="card-text">Описание мероприятия</p>
-              <button type="button" class="btn btn-primary">Подробнее</button>
-          </div>
-        </div>
-      </div>
-      <!-- Другие прошедшие мероприятия -->
-      <!-- Здесь можно добавить еще карточки с другими прошедшими мероприятиями -->
-    </div>
-  </div>
 {% endblock %}

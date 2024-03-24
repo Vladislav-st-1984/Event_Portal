@@ -22,7 +22,7 @@
                     <h4 class="text-right">Настройка профиля</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Имя</label><p type="text" class="form-control">{{ user.first_name }}</p></div>
+                    <div class="col-md-6"><label class="labels">Имя</label><p id="screen-name" type="text" class="form-control">{{ user.first_name }}</p></div>
                     <div class="col-md-6"><label class="labels">Фамилия</label><p type="text" class="form-control">{{ user.last_name }}</p></div>
                     <div class="col-md-6"><label class="labels">Отчество</label><p type="text" class="form-control">{{ user.middle_name }}</p></div>
                 </div>
@@ -31,10 +31,22 @@
                     <div class="col-md-12"><label class="labels">Электронная почта студента</label><p type="text" class="form-control">{{ user.stud_email }}</p></div>
                     <div class="col-md-12"><label class="labels">Личная электронная почта</label><p type="text" class="form-control">{{ user.email }}</p></div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div class="mt-3 text-center"><button class="btn btn-primary profile-button" type="button">Сохранить изменения</button></div>
+                <div class="mt-3 text-center"><button id="apply" class="btn btn-primary profile-button" type="button">Изменить профиль </button></div>
             </div>
         </div>
         </div>
     </div>
 </div>
+    <div>
+        <input id="nameID" name="name" type="text" size="20">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+    document.getElementById('apply').addEventListener('click', function() {
+  document.getElementById('screen-name').innerHTML = document.getElementById('nameID').value.trim()
+})
+    </script>
 {% endblock %}

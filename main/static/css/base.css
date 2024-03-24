@@ -1,11 +1,11 @@
 
     /* Кастомные стили */
     body {
-      font-family: Arial, sans-serif;
-      background: #81d4e1;
+      font-family: Libre Baskerville, sans-serif;
+      background: #172D13;
     }
     .menu {
-      background-color: #61ccad;
+      background-color: #D76F30;
       padding: 10px;
       color: #fff;
     }
@@ -16,6 +16,17 @@
     .main-block {
       margin-top: 20px;
     }
+    .main-block h2 {
+        color: #D76F30;
+        font-family: "Libre Baskerville", sans-serif;
+    }
     .event-card {
       margin-bottom: 20px;
     }
+    @font-face {
+        font-family: 'Libre Baskerville';
+	    src: local('Libre Baskerville'),
+		url(../Fonts/LibreBaskerville-Regular.ttf);
+    }
+    
+
