@@ -1,5 +1,6 @@
 from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView
 from django.contrib.auth import login, logout, authenticate
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
@@ -9,7 +10,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, TemplateView
 
-from main.forms import CreateUserForm, LoginUserForm
+from main.forms import CreateUserForm, LoginUserForm, UpdateProfile
 from main.models import Users
 from main.utils import DataMixin
 
@@ -76,21 +77,26 @@ def eventfunc(request):
 def enentinfofunc(request):
     return render(request, 'main/Eventsinfo.html')
 
-#
-# def profilefunc(request):
-#     return render(request, 'main/profile.html')
 
-
-class Profile(DataMixin, TemplateView):
+class Profile(DataMixin, UpdateView):
     model = Users
     template_name = 'main/profile.html'
-    # fields = ['avatar']
+    form_class = UpdateProfile
+    # fields = ['first_name', 'last_name', 'middle_name', "email", "stud_email", "phone"]
+    user_id = 0
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(Profile, self).get_context_data(**kwargs)
         c_def = self.get_user_content(title="Твой профиль", user=self.request.user)
+        print(f"user - {self.request.user}")
         return dict(list(context.items()) + list(c_def.items()))
 
-    # def get_success_url(self, *args, **kwargs):
-    #     return reverse_lazy('profile', args=[self.kwargs['pk']])  ## передаем "слагом" пк юзера
+    def get_success_url(self, *args, **kwargs):
+        return reverse_lazy('profile', args=[self.kwargs['pk']])  ## передаем "слагом" пк юзера
 
+    def form_valid(self, form):
+        print("form_valid")
+        # form.instance.user = self.user_id
+        form.save()
+        # return super(Profile, self).form_valid(form)
+        return super().form_valid(form)

@@ -23,3 +23,12 @@ class LoginUserForm(AuthenticationForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput(
         attrs={'class': 'form-control', 'placeholder': 'Пароль', 'type': 'password'}))
 
+class ClassStyleForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(ClassStyleForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+class UpdateProfile(ClassStyleForm):
+    class Meta:
+        model = Users
+        fields = ['first_name', 'last_name', 'middle_name', "email", "stud_email", "phone"]
