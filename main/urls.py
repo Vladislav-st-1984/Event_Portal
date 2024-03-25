@@ -15,4 +15,10 @@ urlpatterns = [
     path('profile/<pk>', Profile.as_view(), name='profile'),
 
 
+    path('update_event/<pk>', UpdateEvent.as_view(), name='update_event'),
+    path('list_event', ListEvent.as_view(), name='list_event'),
+    path('event', event, name='event'),
+    path('create_event', CreateEvent.as_view(), name='create_event'),
+
+
 ]

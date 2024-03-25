@@ -28,7 +28,31 @@ class ClassStyleForm(forms.ModelForm):
         super(ClassStyleForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
+
+class BsClassStyleForm(BSModalModelForm):
+    def __init__(self, *args, **kwargs):
+        super(BsClassStyleForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 class UpdateProfile(ClassStyleForm):
     class Meta:
         model = Users
         fields = ['first_name', 'last_name', 'middle_name', "email", "stud_email", "phone"]
+
+
+class UpdateEventsForm(BsClassStyleForm):
+    class Meta:
+        model = Event
+        fields = ['date', 'time', 'address', 'title', 'information']
+        widgets = {
+            "date": forms.DateInput(attrs={'class': 'form-control datepicker mr-2', 'id': 'datepicker', }),
+        }
+
+    def clean_time(self):
+        number = self.cleaned_data['time']
+        tpl = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]-([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+        print(number)
+        if re.match(tpl, number) is not None:
+            return number
+        else:
+            raise forms.ValidationError("Формат времени обязан быть XX:XX-XX:XX")

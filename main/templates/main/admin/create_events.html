@@ -1,0 +1,44 @@
+
+<form method="post" action="">
+  {% csrf_token %}
+
+ <div class="modal-header">
+    <h5 class="modal-title">Добавьте новое мероприятие</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  </div>
+
+  <div class="modal-body">
+    {% for field in form %}
+      <div class="form-group{% if field.errors %} invalid{% endif %}">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% for error in field.errors %}
+          <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  <input type="hidden" name="next" value="{{ success_url }}">
+  </div>
+
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-success">Добавить</button>
+  </div>
+
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datepicker').val($("#date").attr("data-info"));
+        {#$('#id_reserv_time').val($("#res_time").attr("data-info")).change();#}
+        {#console.log("DATE", $("#date").attr("data-info"));#}
+        {#console.log("RES_TIME", $("#res_time").attr("data-info"));#}
+        $('#datepicker').datepicker({
+            format: 'dd.mm.yyyy',
+            todayHighlight: true,
+            toggleActive: true,
+            startDate: new Date(),
+
+        });
+
+    });
+</script>

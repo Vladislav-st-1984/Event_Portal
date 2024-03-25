@@ -53,3 +53,20 @@ class Users(AbstractUser):
 
     def __str__(self):
         return self.email
+
+
+class Event(models.Model):
+    date = models.DateField('День')
+    time = models.CharField('Время', max_length=50, null=True, blank=True)
+    address = models.CharField('Адрес', max_length=250, default="")
+    title = models.CharField('Заголовок', max_length=250, default="")
+    information = models.TextField('Информация о мероприятии', null=True, blank=True, default="")
+
+
+    class Meta:
+        verbose_name = 'Мероприятие'
+        verbose_name_plural = "Мероприятия"
+
+    def __str__(self):
+        return f"{self.title}"
+

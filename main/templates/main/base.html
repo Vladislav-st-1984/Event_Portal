@@ -1,4 +1,5 @@
 {% load static %}
+{% load has_group %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -24,10 +25,19 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 {% for m in menu %}
-                    {% if m.path == request.path %}
-                        <div class="btn btn-outline-primary">{{ m.title }}</div>
-                    {% else %}
-                        <a class="nav-link px-2 text-white" href="{% url m.url_name %}">{{ m.title }}</a>
+                    {% if m.url_name == 'home' %}
+                        {% if m.path == request.path %}
+                            <div class="btn btn-outline-primary">{{ m.title }}</div>
+                        {% else %}
+                            <a class="nav-link px-2 text-white" href="{% url m.url_name %}">{{ m.title }}</a>
+                        {% endif %}
+
+                    {% elif request.user|has_group:"Admin" and m.url_name == 'list_event' %}
+                        {% if m.path == request.path  %}
+                            <div class="btn btn-outline-primary">{{ m.title }}</div>
+                        {% else %}
+                            <a class="nav-link px-2 text-white" href="{% url m.url_name %}">{{ m.title }}</a>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
 
