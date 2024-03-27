@@ -21,12 +21,9 @@
     <link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet"/>
 
 
-
 {% endblock %}
 
 
-{% block content %}
-    <head>
     <meta charset="UTF-8">
     <meta name="description" content="Manup Template">
     <meta name="keywords" content="Manup, unica, creative, html">
@@ -40,9 +37,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
 
 
-    </head>
+{% block content %}
 
-    <body>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -61,7 +57,7 @@
                     <ul>
                         <li class="active"><a href="{% url 'home' %}">Главная</a></li>
                         <li><a href="{% url 'events' %}">Список мероприятий</a></li>
-{#                        <li><a href="{% url '' %}">Профиль</a></li>#}
+                        <li><a href="{% url 'profile' request.user.pk %}">Профиль</a></li>#}
                     </ul>
                 </nav>
             </div>
@@ -1171,7 +1167,11 @@
     </footer>
     <!-- Footer Section End -->
 
-        <!-- Js Plugins -->
+{% endblock %}
+
+{% block scripts %}
+
+            <!-- Js Plugins -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
@@ -1179,5 +1179,5 @@
     <script src="{% static 'js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
-    </body>
+
 {% endblock %}
