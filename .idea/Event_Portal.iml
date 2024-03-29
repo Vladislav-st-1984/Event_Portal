@@ -30,6 +30,8 @@
     <orderEntry type="library" name="ya-share" level="application" />
     <orderEntry type="library" name="carousel-btstrp" level="application" />
     <orderEntry type="library" name="tilda-zero-gallery-1.0" level="application" />
+    <orderEntry type="library" name="Swiper" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
