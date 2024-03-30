@@ -2,15 +2,12 @@ from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView, B
 from django.contrib.auth import login, logout, authenticate
 from django.db.models import Q
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
-
-
-
+from django.shortcuts import render, redirect, get_object_or_404
 
 ## регистрация пользователя
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView, TemplateView, ListView
+from django.views.generic import UpdateView, TemplateView, ListView, DetailView
 
 from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEventsForm
 from main.models import Users, Event
@@ -89,12 +86,61 @@ class Index(DataMixin, TemplateView):
             else:
                 future_dates.append(date_obj)
 
-        past_date = max(past_dates)
-        future_date = min(future_dates)
+        # past_date = max(past_dates)
+        future_date = []
+        if future_dates != []:
+            future_date = min(future_dates)
 
         nearly_event = Event.objects.filter(Q(date=future_date))
 
         c_def = self.get_user_content(title="Главная!", Nearly_event=nearly_event)
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+class EventList(DataMixin, TemplateView):
+    template_name = "main/Events.html"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        event_list = Event.objects.all()
+        date_list = [event.date for event in event_list]
+
+        now = datetime.date.today()
+        date_format = "%Y-%B-%d %H:%M:%S"
+        past_dates, future_dates, nearly_dates = [], [], []
+
+        for date in event_list:
+            # date_obj = datetime.datetime.strptime(date.date, date_format)
+            date_obj = date.date
+            if now <= date_obj <= (now + datetime.timedelta(days=3)):
+                nearly_dates.append(date_obj)
+            elif now >= date_obj:
+                past_dates.append(date_obj)
+            else:
+                future_dates.append(date_obj)
+
+        # past_date = []
+        # if past_date == []:
+        #     max_past = max(past_dates)
+        #     past_date.append(max_past)
+        #     past_dates.remove(max_past)
+
+        # future_date = []
+        # if future_dates == []:
+        #     min_future = min(future_dates)
+        #     future_date.append(min_future)
+        #     future_dates.remove(min_future)
+
+        nearly_event = Event.objects.filter(Q(date__in=nearly_dates))
+        past_event = Event.objects.filter(Q(date__in=past_dates))
+        future_event = Event.objects.filter(Q(date__in=future_dates))
+
+        print(f"nearly_event = {nearly_event}")
+        print(f"past_event - {past_event}")
+        print(f"future_event - {future_event}")
+
+        c_def = self.get_user_content(title="Список мероприятий", Nearly_event=nearly_event, Past_event=past_event, Future_event=future_event)
         return dict(list(context.items()) + list(c_def.items()))
 
 
@@ -104,6 +150,19 @@ def eventfunc(request):
 
 def enentinfofunc(request):
     return render(request, 'main/Eventsinfo.html')
+
+class EventDetail(DataMixin, ListView):
+    template_name = "main/Eventsinfo.html"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_content(title="Подробная инфа!")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def get_queryset(self):
+        # event = get_object_or_404(Event, pk=self.kwargs["pk"])
+        return Event.objects.filter(pk=self.kwargs["pk"])
+
 
 
 class Profile(DataMixin, UpdateView):

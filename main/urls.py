@@ -10,8 +10,8 @@ urlpatterns = [
     path('reg', RegisterUser.as_view(), name='register'),
 
 
-    path('Events', eventfunc, name='events'),
-    path('Eventsinfo', enentinfofunc, name='eventsinfo'),
+    path('Events', EventList.as_view(), name='Events'),
+    path('Eventsinfo/<pk>', EventDetail.as_view(), name='Eventsinfo'),
     path('profile/<pk>', Profile.as_view(), name='profile'),
 
 
