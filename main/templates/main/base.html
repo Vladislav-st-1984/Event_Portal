@@ -47,7 +47,7 @@
             <div class="text-end">
 
                 {% if request.user.is_authenticated %}
-{#                    <a class="btn btn-outline-primary" href="{% url 'profile' request.user.pk %}">Привет {{ user.username }}</a>#}
+                    <a class="btn btn-outline-primary" href="{% url 'profile' request.user.pk %}">Профиль</a>
                     <a class="btn btn-outline-light me-2" href="{% url 'logout' %}">Выйти</a>
                 {% else %}
                     <a id="login_modal" class="btn btn-outline-light me-2" type="button" name="button">Логин</a>

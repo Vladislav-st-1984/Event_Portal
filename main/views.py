@@ -1,5 +1,6 @@
 from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView, BSModalUpdateView
 from django.contrib.auth import login, logout, authenticate
+from django.db.models import Q
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
@@ -66,9 +67,35 @@ def logout_user(request):
     return redirect('home')
 
 
+import datetime
+class Index(DataMixin, TemplateView):
+    template_name = "main/index.html"
 
-def index(request):
-    return render(request, 'main/index.html')
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        event_list = Event.objects.all()
+        date_list = [event.date for event in event_list]
+
+        now = datetime.date.today()
+        date_format = "%Y-%B-%d %H:%M:%S"
+        past_dates, future_dates = [], []
+
+        for date in event_list:
+            # date_obj = datetime.datetime.strptime(date.date, date_format)
+            date_obj = date.date
+            if now >= date_obj:
+                past_dates.append(date_obj)
+            else:
+                future_dates.append(date_obj)
+
+        past_date = max(past_dates)
+        future_date = min(future_dates)
+
+        nearly_event = Event.objects.filter(Q(date=future_date))
+
+        c_def = self.get_user_content(title="Главная!", Nearly_event=nearly_event)
+        return dict(list(context.items()) + list(c_def.items()))
 
 
 def eventfunc(request):
@@ -99,8 +126,6 @@ class Profile(DataMixin, UpdateView):
         form.save()
         # return super(Profile, self).form_valid(form)
         return super().form_valid(form)
-
-
 
 
 ## Создание оборудования
