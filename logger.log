@@ -1,0 +1,95 @@
+2024-04-03 23:09:57 main.views 13864 views.py get_context_data INFO 
+2024-04-03 23:10:35 main.views 13864 views.py get_context_data INFO 
+2024-04-03 23:12:45 main.views 13864 views.py form_invalid ERROR ёзер j@mpt.ru не смог зарегестрироватьс€
+2024-04-03 23:14:10 main.views 7288 views.py get_context_data INFO 
+2024-04-03 23:14:28 main.views 7288 views.py form_invalid ERROR ёзер 123@mpt.ru не смог зарегестрироватьс€
+2024-04-03 23:14:28 main.views 7288 views.py get_context_data INFO 
+2024-04-03 23:14:28 main.views 7288 views.py form_invalid ERROR ёзер 123@mpt.ru не смог зарегестрироватьс€
+2024-04-03 23:14:28 main.views 7288 views.py get_context_data INFO 
+2024-04-03 23:14:54 main.views 7288 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:14:54 main.views 7288 views.py get_context_data INFO 
+2024-04-03 23:14:56 main.views 7288 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:14:56 main.views 7288 views.py get_context_data INFO 
+2024-04-03 23:16:26 main.views 12888 views.py logout_user INFO ёзер None вышел
+2024-04-03 23:16:26 main.views 12888 views.py get_context_data INFO 
+2024-04-03 23:16:32 main.views 12888 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:16:32 main.views 12888 views.py get_context_data INFO 
+2024-04-03 23:16:33 main.views 12888 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:16:33 main.views 12888 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:16:33 main.views 12888 views.py get_context_data INFO 
+2024-04-03 23:16:41 main.views 12888 views.py logout_user INFO ёзер None вышел
+2024-04-03 23:16:41 main.views 12888 views.py get_context_data INFO 
+2024-04-03 23:18:37 django.utils.autoreload 14608 autoreload.py run_with_reloader INFO Watching for file changes with StatReloader
+2024-04-03 23:19:12 main.views 14608 views.py get_context_data INFO 
+2024-04-03 23:19:14 main.views 14608 views.py get_context_data INFO 
+2024-04-03 23:22:34 django.utils.autoreload 14608 autoreload.py trigger_reload INFO C:\Users\Paradox\PycharmProjects\Event_Portal\Event_Portal\settings.py changed, reloading.
+2024-04-03 23:43:38 main.views 15040 views.py get_context_data INFO 
+2024-04-03 23:45:12 main.views 14704 views.py logout_user INFO info
+2024-04-03 23:45:12 main.views 14704 views.py logout_user DEBUG debig
+2024-04-03 23:45:12 main.views 14704 views.py logout_user ERROR Error
+2024-04-03 23:45:12 main.views 14704 views.py get_context_data INFO 
+2024-04-03 23:46:51 main.views 14704 views.py form_invalid ERROR ёзер isip_v.a.karpov@mpt.ru не смог зарегестрироватьс€
+2024-04-03 23:46:51 main.views 14704 views.py get_context_data INFO 
+2024-04-03 23:46:52 main.views 14704 views.py form_invalid ERROR ёзер isip_v.a.karpov@mpt.ru не смог зарегестрироватьс€
+2024-04-03 23:46:52 main.views 14704 views.py get_context_data INFO 
+2024-04-03 23:47:33 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:47:35 main.views 3332 views.py form_valid DEBUG ёзер isip_v.a.karpov@mpt.ru зарегестрировалс€
+2024-04-03 23:47:35 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:47:43 main.views 3332 views.py logout_user INFO info
+2024-04-03 23:47:43 main.views 3332 views.py logout_user DEBUG debig
+2024-04-03 23:47:43 main.views 3332 views.py logout_user ERROR Error
+2024-04-03 23:47:43 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:48:53 main.views 3332 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:48:53 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:48:55 main.views 3332 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:48:55 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:49:42 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:49:55 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:49:56 main.views 3332 views.py logout_user INFO info
+2024-04-03 23:49:56 main.views 3332 views.py logout_user DEBUG debig
+2024-04-03 23:49:56 main.views 3332 views.py logout_user ERROR Error
+2024-04-03 23:49:56 main.views 3332 views.py get_context_data INFO 
+2024-04-03 23:52:20 main.views 14744 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:52:20 main.views 14744 views.py get_context_data INFO 
+2024-04-03 23:52:21 main.views 14744 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:52:21 main.views 14744 views.py get_context_data INFO 
+2024-04-03 23:52:26 main.views 14744 views.py logout_user INFO info
+2024-04-03 23:52:26 main.views 14744 views.py logout_user DEBUG debig
+2024-04-03 23:52:26 main.views 14744 views.py logout_user ERROR Error
+2024-04-03 23:52:26 main.views 14744 views.py get_context_data INFO 
+2024-04-03 23:54:24 main.views 14120 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:54:24 main.views 14120 views.py get_context_data INFO 
+2024-04-03 23:54:25 main.views 14120 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:54:25 main.views 14120 views.py get_context_data INFO 
+2024-04-03 23:54:29 main.views 14120 views.py logout_user INFO info
+2024-04-03 23:54:29 main.views 14120 views.py logout_user DEBUG debig
+2024-04-03 23:54:29 main.views 14120 views.py logout_user ERROR Error
+2024-04-03 23:54:30 main.views 14120 views.py get_context_data INFO 
+2024-04-03 23:56:26 main.views 12144 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-03 23:56:26 main.views 12144 views.py get_context_data INFO 
+2024-04-03 23:56:27 main.views 12144 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-03 23:56:27 main.views 12144 views.py get_context_data INFO 
+2024-04-03 23:56:28 main.views 12144 views.py logout_user INFO info
+2024-04-03 23:56:28 main.views 12144 views.py logout_user DEBUG debig
+2024-04-03 23:56:28 main.views 12144 views.py logout_user ERROR Error
+2024-04-03 23:56:29 main.views 12144 views.py get_context_data INFO 
+2024-04-04 00:08:33 main.views 14424 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-04 00:08:33 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:08:37 main.views 14424 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-04 00:08:37 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:09:14 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:09:16 main.views 14424 views.py logout_user INFO info
+2024-04-04 00:09:16 main.views 14424 views.py logout_user DEBUG debig
+2024-04-04 00:09:17 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:09:23 main.views 14424 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-04 00:09:23 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:09:25 main.views 14424 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-04 00:09:25 main.views 14424 views.py get_context_data INFO 
+2024-04-04 00:13:14 main.views 16256 views.py get_context_data INFO 
+2024-04-04 00:13:18 main.views 16256 views.py logout_user INFO info
+2024-04-04 00:13:18 main.views 16256 views.py logout_user DEBUG debig
+2024-04-04 00:13:19 main.views 16256 views.py get_context_data INFO 
+2024-04-04 00:13:47 main.views 16256 views.py get_success_url INFO ёзер  залогинилс€
+2024-04-04 00:13:47 main.views 16256 views.py get_context_data INFO 
+2024-04-04 00:13:48 main.views 16256 views.py get_success_url INFO ёзер None залогинилс€
+2024-04-04 00:13:48 main.views 16256 views.py get_context_data INFO 

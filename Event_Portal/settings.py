@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     "phonenumber_field",
     'widget_tweaks',
+'django_db_logger',
 ]
 
 MIDDLEWARE = [
@@ -138,21 +139,6 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = []
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mypraktik1@gmail.com'
-EMAIL_HOST_PASSWORD = 'Happy.nov'
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -163,18 +149,62 @@ LOGGING = {
         },
     },
     'handlers': {
+        'db_log': {
+            'level': 'DEBUG',
+            'class': 'django_db_logger.db_log_handler.DatabaseLogHandler'
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'details',
+        },
         'file': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': 'logger.log',
             'formatter': 'details',
         },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+            'email_backend': 'django.core.mail.backends.smtp.EmailBackend',
+            'formatter': 'details',
+        },
     },
     'loggers': {
-        'magazine.views': {
-            'handlers': ['file'],
+        'django': {
+            'handlers': ['console'],
             'level': 'INFO',
-            'propagate': True,
+        },
+        'main.views': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['db_log'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'db': {
+            'handlers': ['db_log'],
+            'level': 'DEBUG',
         },
     },
 }
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mypraktik1@gmail.com'
+EMAIL_HOST_PASSWORD = 'Happy.nov'
+
+

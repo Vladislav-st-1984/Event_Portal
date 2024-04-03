@@ -13,6 +13,12 @@ from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEvent
 from main.models import Users, Event
 from main.utils import DataMixin
 
+## Импорт Логгера
+import logging
+
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -38,9 +44,16 @@ class RegisterUser(DataMixin, BSModalCreateView):
             print(f'stud_email - {stud_email}')
             print(f'raw_password - {raw_password}')
             print(f'user - {user}')
+
+            logger.debug(f"Юзер {stud_email} зарегестрировался")
+
             login(self.request, user)  ## авто-логин пользователя при регистрации
         return redirect('home')
 
+    # def form_invalid(self, form):
+    #     print("fsfdsfsdfsdf")
+    #     logger.error(f"Юзер {form.cleaned_data.get('stud_email')} не смог зарегестрироваться")
+    #     return redirect('home')
 
 ## логин пользователя
 class LoginUser(DataMixin, BSModalLoginView):
@@ -55,11 +68,18 @@ class LoginUser(DataMixin, BSModalLoginView):
         return dict(list(context.items()) + list(c_def.items()))
 
     def get_success_url(self):
+        logger.info(f"Юзер {self.request.user.username} залогинился")
         return reverse_lazy('home')
 
 
 ## функция выхода пользователя
 def logout_user(request):
+    logger.info(f"info")
+    logger.debug(f"debig")
+
+    db_logger = logging.getLogger('db')
+    db_logger.error(f"Error")
+
     logout(request)
     return redirect('home')
 
@@ -103,45 +123,52 @@ class EventList(DataMixin, TemplateView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        event_list = Event.objects.all()
-        date_list = [event.date for event in event_list]
+        try:
+            event_list = Event.objects.all()
+            date_list = [event.date for event in event_list]
 
-        now = datetime.date.today()
-        date_format = "%Y-%B-%d %H:%M:%S"
-        past_dates, future_dates, nearly_dates = [], [], []
+            now = datetime.date.today()
+            date_format = "%Y-%B-%d %H:%M:%S"
+            past_dates, future_dates, nearly_dates = [], [], []
 
-        for date in event_list:
-            # date_obj = datetime.datetime.strptime(date.date, date_format)
-            date_obj = date.date
-            if now <= date_obj <= (now + datetime.timedelta(days=3)):
-                nearly_dates.append(date_obj)
-            elif now >= date_obj:
-                past_dates.append(date_obj)
-            else:
-                future_dates.append(date_obj)
+            for date in event_list:
+                # date_obj = datetime.datetime.strptime(date.date, date_format)
+                date_obj = date.date
+                if now <= date_obj <= (now + datetime.timedelta(days=3)):
+                    nearly_dates.append(date_obj)
+                elif now >= date_obj:
+                    past_dates.append(date_obj)
+                else:
+                    future_dates.append(date_obj)
 
-        # past_date = []
-        # if past_date == []:
-        #     max_past = max(past_dates)
-        #     past_date.append(max_past)
-        #     past_dates.remove(max_past)
+            # past_date = []
+            # if past_date == []:
+            #     max_past = max(past_dates)
+            #     past_date.append(max_past)
+            #     past_dates.remove(max_past)
 
-        # future_date = []
-        # if future_dates == []:
-        #     min_future = min(future_dates)
-        #     future_date.append(min_future)
-        #     future_dates.remove(min_future)
+            # future_date = []
+            # if future_dates == []:
+            #     min_future = min(future_dates)
+            #     future_date.append(min_future)
+            #     future_dates.remove(min_future)
 
-        nearly_event = Event.objects.filter(Q(date__in=nearly_dates))
-        past_event = Event.objects.filter(Q(date__in=past_dates))
-        future_event = Event.objects.filter(Q(date__in=future_dates))
+            nearly_event = Event.objects.filter(Q(date__in=nearly_dates))
+            past_event = Event.objects.filter(Q(date__in=past_dates))
+            future_event = Event.objects.filter(Q(date__in=future_dates))
 
-        print(f"nearly_event = {nearly_event}")
-        print(f"past_event - {past_event}")
-        print(f"future_event - {future_event}")
+            print(f"nearly_event = {nearly_event}")
+            print(f"past_event - {past_event}")
+            print(f"future_event - {future_event}")
 
-        c_def = self.get_user_content(title="Список мероприятий", Nearly_event=nearly_event, Past_event=past_event, Future_event=future_event)
-        return dict(list(context.items()) + list(c_def.items()))
+            c_def = self.get_user_content(title="Список мероприятий", Nearly_event=nearly_event, Past_event=past_event, Future_event=future_event)
+            return dict(list(context.items()) + list(c_def.items()))
+        except ():
+            logger.error("Произошла ошибка")
+            c_def = self.get_user_content(title="Список мероприятий")
+            return dict(list(context.items()) + list(c_def.items()))
+
+
 
 
 def eventfunc(request):
@@ -246,12 +273,7 @@ class UpdateEvent(DataMixin, BSModalUpdateView):
         return super().form_valid(form)
 
 
-## Импорт Логгера
-import logging
 
-from django.http import HttpResponse
-
-logger = logging.getLogger(__name__)
 
 
 def index(request):
