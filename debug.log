@@ -1,0 +1,8 @@
+2024-04-03 21:46:23,261 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2024-04-03 21:55:41,759 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2024-04-03 22:00:59,014 django.utils.autoreload INFO     C:\Users\asd\PycharmProjects\Event_Portal\main\views.py changed, reloading.
+2024-04-03 22:00:59,486 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2024-04-03 22:18:12,620 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2024-04-03 22:18:14,037 main.views   ERROR    Test!!
+2024-04-03 22:21:44,730 django.utils.autoreload INFO     C:\Users\asd\PycharmProjects\Event_Portal\main\views.py changed, reloading.
+2024-04-03 22:21:45,319 django.utils.autoreload INFO     Watching for file changes with StatReloader

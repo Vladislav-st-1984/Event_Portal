@@ -1,13 +1,13 @@
 from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView, BSModalUpdateView
 from django.contrib.auth import login, logout, authenticate
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
 
 ## регистрация пользователя
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView, TemplateView, ListView, DetailView
+from django.views.generic import UpdateView, TemplateView, ListView
 
 from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEventsForm
 from main.models import Users, Event
@@ -70,7 +70,7 @@ class Index(DataMixin, TemplateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        logger.info("")
         event_list = Event.objects.all()
         date_list = [event.date for event in event_list]
 
@@ -244,3 +244,17 @@ class UpdateEvent(DataMixin, BSModalUpdateView):
         if self.request.POST.get('asyncUpdate') == 'True':
             form.save()
         return super().form_valid(form)
+
+
+## Импорт Логгера
+import logging
+
+from django.http import HttpResponse
+
+logger = logging.getLogger(__name__)
+
+
+def index(request):
+    logger.error("Test!!")
+
+    return HttpResponse("Hello logging world.")
