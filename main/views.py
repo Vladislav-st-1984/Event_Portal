@@ -1,3 +1,5 @@
+import random
+
 from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView, BSModalUpdateView
 from django.contrib.auth import login, logout, authenticate
 from django.db.models import Q
@@ -7,7 +9,7 @@ from django.shortcuts import render, redirect
 ## регистрация пользователя
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView, TemplateView, ListView
+from django.views.generic import UpdateView, TemplateView, ListView, DetailView
 
 from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEventsForm
 from main.models import Users, Event
@@ -101,17 +103,29 @@ class Index(DataMixin, TemplateView):
         for date in event_list:
             # date_obj = datetime.datetime.strptime(date.date, date_format)
             date_obj = date.date
-            if now >= date_obj:
+            if now > date_obj:
                 past_dates.append(date_obj)
             else:
                 future_dates.append(date_obj)
 
         # past_date = max(past_dates)
-        future_date = []
+        future_date_arr = []
+        # print(f"future_dates - {future_dates}")
         if future_dates != []:
-            future_date = min(future_dates)
+            future_date_arr = min(future_dates)
 
-        nearly_event = Event.objects.filter(Q(date=future_date))
+        # if len(future_date_arr) > 1:
+        #     future_date_arr = random.choice(future_date_arr)
+
+        print(f'future_date_arr - {future_date_arr}')
+        # nearly_event = Event.objects.filter(Q(date=future_date_arr))
+        nearly_event = Event.objects.filter(Q(date=future_date_arr)).first()
+
+        # print(f'before if - {nearly_event}')
+        #
+        # if len(nearly_event) > 1:
+        #     nearly_event = random.choice(nearly_event)
+        #     print(f'after if - {nearly_event}')
 
         c_def = self.get_user_content(title="Главная!", Nearly_event=nearly_event)
         return dict(list(context.items()) + list(c_def.items()))
@@ -141,18 +155,6 @@ class EventList(DataMixin, TemplateView):
                 else:
                     future_dates.append(date_obj)
 
-            # past_date = []
-            # if past_date == []:
-            #     max_past = max(past_dates)
-            #     past_date.append(max_past)
-            #     past_dates.remove(max_past)
-
-            # future_date = []
-            # if future_dates == []:
-            #     min_future = min(future_dates)
-            #     future_date.append(min_future)
-            #     future_dates.remove(min_future)
-
             nearly_event = Event.objects.filter(Q(date__in=nearly_dates))
             past_event = Event.objects.filter(Q(date__in=past_dates))
             future_event = Event.objects.filter(Q(date__in=future_dates))
@@ -169,27 +171,19 @@ class EventList(DataMixin, TemplateView):
             return dict(list(context.items()) + list(c_def.items()))
 
 
-
-
-def eventfunc(request):
-    return render(request, 'main/Events.html')
-
-
-def enentinfofunc(request):
-    return render(request, 'main/Eventsinfo.html')
-
-class EventDetail(DataMixin, ListView):
+class EventDetail(DataMixin, DetailView):
     template_name = "main/Eventsinfo.html"
-    context_object_name = "Event"
+    context_object_name = "event"
+    model = Event
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_content(title="Подробная инфа!")
         return dict(list(context.items()) + list(c_def.items()))
 
-    def get_queryset(self):
-        # event = get_object_or_404(Event, pk=self.kwargs["pk"])
-        return Event.objects.filter(pk=self.kwargs["pk"])
+    # def get_queryset(self):
+    #     # event = get_object_or_404(Event, pk=self.kwargs["pk"])
+    #     return Event.objects.filter(pk=self.kwargs["pk"])
 
 
 
@@ -273,11 +267,3 @@ class UpdateEvent(DataMixin, BSModalUpdateView):
             form.save()
         return super().form_valid(form)
 
-
-
-
-
-def index(request):
-    logger.error("Test!!")
-
-    return HttpResponse("Hello logging world.")

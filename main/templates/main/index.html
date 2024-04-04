@@ -33,14 +33,12 @@
                 <div class="card event-card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
                     <div class="card-body">
-                        {% for near_ev in Nearly_event %}
-                            <h5 class="card-title">{{ near_ev.title }}</h5>
-                            <p class="card-text">{{ near_ev.date }}</p>
-                            <p class="card-text">{{ near_ev.information }}</p>
+                            <h5 class="card-title">{{ Nearly_event.title }}</h5>
+                            <p class="card-text">{{ Nearly_event.date }}</p>
+                            <p class="card-text">{{ Nearly_event.information }}</p>
                             <button type="button" class="btn btn-primary"><a style="color: #e0e0e0!important;"
-                                                                             href="{% url 'Eventsinfo' near_ev.pk %}">Подробнее</a>
+                                                                             href="{% url 'Eventsinfo' Nearly_event.pk %}">Подробнее</a>
                             </button>
-                        {% endfor %}
                     </div>
                 </div>
             </div>

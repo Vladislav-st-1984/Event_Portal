@@ -19,6 +19,10 @@
                     <th scope="col">Адрес</th>
                     <th scope="col">Заголовок</th>
                     <th scope="col">Информация о мероприятии</th>
+                    <th scope="col">Номер телефона для связи</th>
+                    <th scope="col">Почта для связи</th>
+                    <th scope="col">Вебсайт мероприятия</th>
+                    <th scope="col">Ссылка на гугл карту</th>
 
                     <th scope="col">Редактировать</th>
 
@@ -34,6 +38,10 @@
                     <th scope="col">Адрес</th>
                     <th scope="col">Заголовок</th>
                     <th scope="col">Информация о мероприятии</th>
+                    <th scope="col">Номер телефона для связи</th>
+                    <th scope="col">Почта для связи</th>
+                    <th scope="col">Вебсайт мероприятия</th>
+                    <th scope="col">Ссылка на гугл карту</th>
 
                     <th>Редактировать</th>
                 </tr>
@@ -77,7 +85,11 @@
                         <td>{{ i.time }}</td>
                         <td>{{ i.address }}</td>
                         <td>{{ i.title }}</td>
-                        <td>{{ i.information }}</td>
+                        <td>{{ i.information|linebreaksbr }}</td>
+                        <td>{{ i.contact_phone }}</td>
+                        <td>{{ i.contact_email }}</td>
+                        <td>{{ i.contact_website }}</td>
+                        <td>{{ i.googleMap_address_link }}</td>
 
                         <td>
                             <button type="button" class="update-event btn btn-sm btn-primary"

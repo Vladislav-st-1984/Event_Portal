@@ -61,7 +61,10 @@ class Event(models.Model):
     address = models.CharField('Адрес', max_length=250, default="")
     title = models.CharField('Заголовок', max_length=250, default="")
     information = models.TextField('Информация о мероприятии', null=True, blank=True, default="")
-
+    contact_phone = PhoneNumberField("Номер телефона для связи", null=True, blank=True)
+    contact_email = models.EmailField("Почта для связи", blank=True, null=True)
+    contact_website = models.CharField('Вебсайт мероприятия', max_length=250, blank=True, null=True)
+    googleMap_address_link = models.TextField('Ссылка на гугл карту', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Мероприятие'
@@ -69,4 +72,3 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title}"
-
