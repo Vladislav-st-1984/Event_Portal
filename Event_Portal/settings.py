@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     'widget_tweaks',
 'django_db_logger',
+# 'sslserver',
 ]
 
 MIDDLEWARE = [

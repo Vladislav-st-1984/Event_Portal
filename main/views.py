@@ -209,7 +209,7 @@ class Profile(DataMixin, UpdateView):
         return super().form_valid(form)
 
 
-## Создание оборудования
+## Создание мероприятия
 class CreateEvent(BSModalCreateView):
     form_class = UpdateEventsForm
     template_name = 'main/admin/create_events.html'
@@ -229,7 +229,7 @@ def event(request):
         return JsonResponse(data)
 
 
-## Список оборудования
+## Список мероприятия
 class ListEvent(DataMixin, ListView):
     model = Event
     template_name = "main/admin/list_events.html"
@@ -250,7 +250,7 @@ class ListEvent(DataMixin, ListView):
         return super(ListEvent, self).get(request, *args, **kwargs)
 
 
-## Обновление оборудования
+## Обновление мероприятия
 class UpdateEvent(DataMixin, BSModalUpdateView):
     model = Event
     form_class = UpdateEventsForm
