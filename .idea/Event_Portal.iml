@@ -25,6 +25,9 @@
     <orderEntry type="library" name="Swiper" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="Swiper" level="application" />
+    <orderEntry type="library" name="jquery.tablesorter" level="application" />
+    <orderEntry type="library" name="bootstrap-datepicker" level="application" />
+    <orderEntry type="library" name="sweetalert2" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
