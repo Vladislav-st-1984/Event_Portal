@@ -1,32 +1,41 @@
+/* Кастомные стили */
+body {
+    font-family: Libre Baskerville, sans-serif;
+    background: #2A3457 ;
+}
 
-    /* Кастомные стили */
-    body {
-      font-family: Libre Baskerville, sans-serif;
-      background: #172D13;
-    }
-    .menu {
-      background-color: #D76F30;
-      padding: 10px;
-      color: #fff;
-    }
-    .menu a {
-      color: #fff;
-      margin-right: 10px;
-    }
-    .main-block {
-      margin-top: 20px;
-    }
-    .main-block h2 {
-        color: #D76F30;
-        font-family: "Libre Baskerville", sans-serif;
-    }
-    .event-card {
-      margin-bottom: 20px;
-    }
-    @font-face {
-        font-family: 'Libre Baskerville';
-	    src: local('Libre Baskerville'),
-		url(../Fonts/LibreBaskerville-Regular.ttf);
-    }
+.menu {
+    background-color: #D76F30;
+    padding: 10px;
+    color: #fff;
+}
+
+.menu a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.main-block {
+    margin-top: 20px;
+}
+
+.main-block h2 {
+    color: #A4A4BF;
+    font-family: "Libre Baskerville", sans-serif;
+    text-shadow: -0.4px 0.4px 0 #000,
+    0.4px 0.4px 0 #000,
+    0.4px -0.4px 0 #000,
+    -0.4px -0.4px 0 #000;
+}
+
+.event-card {
+    margin-bottom: 20px;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: local('Libre Baskerville'),
+    url(../Fonts/LibreBaskerville-Regular.ttf);
+}
     
 

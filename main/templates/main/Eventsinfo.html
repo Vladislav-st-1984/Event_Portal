@@ -46,30 +46,30 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="img/logo.png" alt="">
-                </a>
-            </div>
-            <div class="nav-menu">
-                <nav class="mainmenu mobile-menu">
-                    <ul>
-                        <li class="active"><a href="{% url 'home' %}">Главная</a></li>
-                        <li><a href="{% url 'Events' %}">Список мероприятий</a></li>
-                        <li><a href="{% url 'profile' request.user.pk %}">Профиль</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
+{#    <!-- Header Section Begin -->#}
+{#    <header class="header-section">#}
+{#        <div class="container">#}
+{#            <div class="logo">#}
+{#                <a href="./index.html">#}
+{#                    <img src="img/logo.png" alt="">#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="nav-menu">#}
+{#                <nav class="mainmenu mobile-menu">#}
+{#                    <ul>#}
+{#                        <li class="active"><a href="{% url 'home' %}">Главная</a></li>#}
+{#                        <li><a href="{% url 'Events' %}">Список мероприятий</a></li>#}
+{#                        <li><a href="{% url 'profile' request.user.pk %}">Профиль</a></li>#}
+{#                    </ul>#}
+{#                </nav>#}
+{#            </div>#}
+{#            <div id="mobile-menu-wrap"></div>#}
+{#        </div>#}
+{#    </header>#}
+{#    <!-- Header End -->#}
 
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/hero.jpg">
+    <section class="hero-section set-bg" style="box-shadow: 0 3px 2px -2px gray;" data-setbg="img/hero.jpg" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
@@ -122,8 +122,8 @@
     <!-- Counter Section End -->
 
     <!-- Home About Section Begin -->
-    <section class="home-about-section spad">
-        <div class="container">
+    <section class="home-about-section spad" style="background-color: #2A3457">
+        <div class="container" style="background-color: #2A3457">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="ha-pic">
@@ -142,13 +142,13 @@
     <!-- Home About Section End -->
 
     <!-- Schedule Section Begin -->
-    <section class="schedule-section spad">
+    <section class="schedule-section spad " style="background-color: #2A3457">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Our Schedule</h2>
-                        <p>Do not miss anything topic about the event</p>
+                        <h2>Этапы мероприятия</h2>
+                        <p>Не потеряйте важную информацию</p>
                     </div>
                 </div>
             </div>
@@ -158,31 +158,31 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <h5>Day 1</h5>
+                                    <h5>Первый этап</h5>
                                     <p>May 04, 2019</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <h5>Day 2</h5>
+                                    <h5>Второй этап</h5>
                                     <p>May 05, 2019</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <h5>Day 3</h5>
+                                    <h5>Третий этап</h5>
                                     <p>May 06, 2019</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <h5>Day 4</h5>
+                                    <h5>Четвёртый этап</h5>
                                     <p>May 07, 2019</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">
-                                    <h5>Day 5</h5>
+                                    <h5>Пятый этап</h5>
                                     <p>May 08, 2019</p>
                                 </a>
                             </li>
@@ -767,13 +767,13 @@
 
 
     <!-- Contact Section Begin -->
-    <section class="contact-section spad">
+    <section class="contact-section spad" style="background-color: #2A3457">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-title">
                         <h2>Контактная информация</h2>
-                        <p>Get directions to our event center</p>
+                        <p>Не потеряйтесь в пути</p>
                     </div>
                     <div class="cs-text">
                         <div class="ct-address">

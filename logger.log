@@ -209,3 +209,184 @@
 2024-04-05 07:45:29 main.views 7612 views.py get_context_data INFO 
 2024-04-05 07:46:25 main.views 7612 views.py get_context_data INFO 
 2024-04-05 07:48:07 main.views 7612 views.py get_context_data INFO 
+2024-04-22 12:14:24 main.views 12704 views.py get_context_data INFO 
+2024-04-22 12:33:51 main.views 12704 views.py get_context_data INFO 
+2024-04-22 12:39:07 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 12:39:07 main.views 12704 views.py get_context_data INFO 
+2024-04-22 12:39:08 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 12:39:08 main.views 12704 views.py get_context_data INFO 
+2024-04-22 12:50:49 main.views 12704 views.py logout_user INFO info
+2024-04-22 12:50:49 main.views 12704 views.py logout_user DEBUG debig
+2024-04-22 12:50:49 main.views 12704 views.py get_context_data INFO 
+2024-04-22 12:51:21 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:11:36 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 13:11:36 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:11:36 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 13:11:36 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:13:20 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:02 main.views 12704 views.py logout_user INFO info
+2024-04-22 13:16:02 main.views 12704 views.py logout_user DEBUG debig
+2024-04-22 13:16:02 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:11 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 13:16:11 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:11 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 13:16:11 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:15 main.views 12704 views.py logout_user INFO info
+2024-04-22 13:16:15 main.views 12704 views.py logout_user DEBUG debig
+2024-04-22 13:16:15 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:19 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 13:16:19 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:16:20 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 13:16:20 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:00 main.views 12704 views.py logout_user INFO info
+2024-04-22 13:17:00 main.views 12704 views.py logout_user DEBUG debig
+2024-04-22 13:17:00 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:05 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 13:17:05 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:06 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 13:17:06 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:16 main.views 12704 views.py logout_user INFO info
+2024-04-22 13:17:16 main.views 12704 views.py logout_user DEBUG debig
+2024-04-22 13:17:16 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:20 main.views 12704 views.py get_success_url INFO Юзер  залогинился
+2024-04-22 13:17:20 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:17:20 main.views 12704 views.py get_success_url INFO Юзер None залогинился
+2024-04-22 13:17:20 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:34:07 main.views 12704 views.py get_context_data INFO 
+2024-04-22 13:34:26 main.views 12704 views.py get_context_data INFO 
+2024-04-24 22:55:06 main.views 23656 views.py get_context_data INFO 
+2024-04-24 22:55:35 main.views 23656 views.py logout_user INFO info
+2024-04-24 22:55:35 main.views 23656 views.py logout_user DEBUG debig
+2024-04-24 22:55:36 main.views 23656 views.py get_context_data INFO 
+2024-04-24 22:59:23 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:00:34 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:00:47 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:00:53 main.views 23656 views.py get_success_url INFO Юзер  залогинился
+2024-04-24 23:00:53 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:00:54 main.views 23656 views.py get_success_url INFO Юзер None залогинился
+2024-04-24 23:00:54 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:01:08 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:01:22 main.views 23656 views.py logout_user INFO info
+2024-04-24 23:01:22 main.views 23656 views.py logout_user DEBUG debig
+2024-04-24 23:01:22 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:06:22 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:06:28 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:07:00 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:08:38 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:08:57 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:09:08 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:09:29 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:10:12 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:10:32 main.views 23656 views.py get_success_url INFO Юзер  залогинился
+2024-04-24 23:10:32 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:10:33 main.views 23656 views.py get_success_url INFO Юзер None залогинился
+2024-04-24 23:10:33 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:11:07 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:19:16 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:24:16 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:24:23 main.views 23656 views.py logout_user INFO info
+2024-04-24 23:24:23 main.views 23656 views.py logout_user DEBUG debig
+2024-04-24 23:24:24 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:24:27 main.views 23656 views.py get_success_url INFO Юзер  залогинился
+2024-04-24 23:24:27 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:24:28 main.views 23656 views.py get_success_url INFO Юзер None залогинился
+2024-04-24 23:24:28 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:25:07 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:25:14 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:25:43 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:26:35 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:27:18 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:29:45 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:30:16 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:31:08 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:31:31 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:31:46 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:32:47 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:34:33 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:35:01 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:35:11 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:35:14 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:35:33 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:35:50 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:36:09 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:36:36 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:38:36 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:39:54 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:40:31 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:19 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:42 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:46 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:48 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:49 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:46:51 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:47:04 main.views 23656 views.py logout_user INFO info
+2024-04-24 23:47:04 main.views 23656 views.py logout_user DEBUG debig
+2024-04-24 23:47:04 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:49:24 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:49:47 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:50:59 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:51:16 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:53:09 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:53:18 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:53:19 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:54:14 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:54:19 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:54:20 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:54:26 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:54:53 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:55:33 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:55:42 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:57:29 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:57:40 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:58:13 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:58:30 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:59:08 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:59:36 main.views 23656 views.py get_context_data INFO 
+2024-04-24 23:59:44 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:00:16 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:01:07 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:01:31 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:01:50 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:04:33 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:05:33 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:05:59 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:08:58 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:09:50 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:11:38 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:12:46 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:15:33 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:15:48 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:29 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:34 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:36 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:40 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:56 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:16:57 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:18:25 main.views 23656 views.py get_success_url INFO Юзер  залогинился
+2024-04-25 00:18:26 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:18:26 main.views 23656 views.py get_success_url INFO Юзер None залогинился
+2024-04-25 00:18:26 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:25:17 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:27:29 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:58:19 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:58:24 main.views 23656 views.py get_context_data INFO 
+2024-04-25 00:58:32 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:05:45 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:06:30 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:10:55 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:10:57 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:19:29 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:19:51 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:20:57 main.views 23656 views.py logout_user INFO info
+2024-04-25 01:20:57 main.views 23656 views.py logout_user DEBUG debig
+2024-04-25 01:20:57 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:21:02 main.views 23656 views.py get_success_url INFO Юзер  залогинился
+2024-04-25 01:21:02 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:21:03 main.views 23656 views.py get_success_url INFO Юзер None залогинился
+2024-04-25 01:21:03 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:32:08 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:32:30 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:32:35 main.views 23656 views.py get_context_data INFO 
+2024-04-25 01:40:12 main.views 23656 views.py logout_user INFO info
+2024-04-25 01:40:12 main.views 23656 views.py logout_user DEBUG debig
+2024-04-25 01:40:12 main.views 23656 views.py get_context_data INFO 

@@ -14,15 +14,15 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Меню -->
-    <div class="menu">
-        <div class="container">
-            <h1>Название сайта</h1>
-            <a href="#">Главная</a>
-            <a href="{% url 'Events' %}">Список Мероприятий</a>
-            <a href="{% url 'profile' request.user.pk %}">Профиль</a>
-        </div>
-    </div>
+{#    <!-- Меню -->#}
+{#    <div class="menu">#}
+{#        <div class="container">#}
+{#            <h1>Название сайта</h1>#}
+{#            <a href="#">Главная</a>#}
+{#            <a href="{% url 'Events' %}">Список Мероприятий</a>#}
+{#           <a href="{% url 'profile' request.user.pk %}">Профиль</a>#}
+{#        </div>#}
+{#    </div>#}
 
     <!-- Основной блок -->
     <div class="container main-block">
@@ -32,10 +32,10 @@
             <div class="col-md-9">
                 <div class="card event-card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
-                    <div class="card-body">
-                            <h5 class="card-title">{{ Nearly_event.title }}</h5>
-                            <p class="card-text">{{ Nearly_event.date }}</p>
-                            <p class="card-text">{{ Nearly_event.information }}</p>
+                    <div class="card-body" style="background-color: #F2FAED">
+                            <h5 class="card-title" style="color: #16235A">{{ Nearly_event.title }}</h5>
+                            <p class="card-text" style="color: #888C46">{{ Nearly_event.date }}</p>
+                            <p class="card-text" style="color: #888C46">{{ Nearly_event.information }}</p>
                             <button type="button" class="btn btn-primary"><a style="color: #e0e0e0!important;"
                                                                              href="{% url 'Eventsinfo' Nearly_event.pk %}">Подробнее</a>
                             </button>
