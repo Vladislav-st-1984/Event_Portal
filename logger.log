@@ -390,3 +390,14 @@
 2024-04-25 01:40:12 main.views 23656 views.py logout_user INFO info
 2024-04-25 01:40:12 main.views 23656 views.py logout_user DEBUG debig
 2024-04-25 01:40:12 main.views 23656 views.py get_context_data INFO 
+2024-04-25 16:51:39 main.views 14224 views.py get_context_data INFO 
+2024-04-25 16:51:40 main.views 14224 views.py get_context_data INFO 
+2024-04-25 16:53:08 main.views 14224 views.py get_context_data INFO 
+2024-04-25 16:53:15 main.views 14224 views.py get_success_url INFO Юзер  залогинился
+2024-04-25 16:53:15 main.views 14224 views.py get_context_data INFO 
+2024-04-25 16:53:16 main.views 14224 views.py get_success_url INFO Юзер None залогинился
+2024-04-25 16:53:16 main.views 14224 views.py get_context_data INFO 
+2024-04-25 16:57:40 main.views 21712 views.py get_context_data INFO 
+2024-04-25 17:06:29 main.views 21712 views.py get_context_data INFO 
+2024-04-25 17:51:09 main.views 4756 views.py get_context_data INFO 
+2024-04-25 18:02:50 main.views 4756 views.py get_context_data INFO 

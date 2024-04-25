@@ -677,7 +677,7 @@ ol {
 
 .schedule-tab .st-content {
     border: 1px solid #ebebeb;
-    border-radius: 2px;
+    border-radius: 20px;
     margin-bottom: 40px;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
