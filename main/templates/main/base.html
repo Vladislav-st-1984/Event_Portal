@@ -42,12 +42,14 @@
                             <a class="nav-link px-2 text-white" href="{% url m.url_name %}">{{ m.title }}</a>
                         {% endif %}
 
-                    {% elif request.user|has_group:"Admin" and m.url_name == 'list_event' %}
+                    {% elif request.user|has_group:"Admin" and m.url_name == 'list_event' or request.user|has_group:"Admin" and m.url_name == 'list_stage' %}
                         {% if m.path == request.path %}
                             <div class="btn btn-outline-primary">{{ m.title }}</div>
                         {% else %}
                             <a class="nav-link px-2 text-white" href="{% url m.url_name %}">{{ m.title }}</a>
                         {% endif %}
+
+
                     {% endif %}
                 {% endfor %}
 

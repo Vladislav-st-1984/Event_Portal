@@ -43,7 +43,7 @@ class Users(AbstractUser):
     stud_email = models.EmailField("Учебная почта", unique=True, blank=False)
     first_name = models.CharField("Имя", max_length=250, blank=False)
     last_name = models.CharField("Фамилия", max_length=250, blank=False)
-    # avatar = models.ImageField('Аватар', upload_to='avatar/%Y/%m/%d/', default='avatar/default/kot.png')
+    avatar = models.ImageField('Аватар', upload_to='avatar/%Y/%m/%d/', default='avatar/default/kot.png')
     middle_name = models.CharField('Отчество', max_length=250, blank=True, null=True)
     phone = PhoneNumberField("Номер телефон", null=True, blank=True)
 
@@ -72,3 +72,23 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+class Stage(models.Model):
+    title = models.CharField('Заголовок', max_length=250, default="")
+    date = models.DateField('День')
+    time = models.CharField('Время', max_length=50, null=True, blank=True)
+    contact_email = models.EmailField("Почта для связи", blank=True, null=True)
+    information = models.TextField('Информация о этапе', null=True, blank=True, default="")
+    img = models.ImageField('Изображение', upload_to='StageImg/%Y/%m/%d/', default='StageImg/default/kot.png')
+
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Этап'
+        verbose_name_plural = "Этапы"
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+

@@ -56,3 +56,21 @@ class UpdateEventsForm(BsClassStyleForm):
             return number
         else:
             raise forms.ValidationError("Формат времени обязан быть XX:XX-XX:XX")
+
+
+class UpdateStageForm(BsClassStyleForm):
+    class Meta:
+        model = Stage
+        fields = ['title', 'date', 'time', 'contact_email', 'event', 'information', 'img']
+        widgets = {
+            "date": forms.DateInput(attrs={'class': 'form-control datepicker mr-2', 'id': 'datepicker', }),
+        }
+
+    def clean_time(self):
+        number = self.cleaned_data['time']
+        tpl = "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]-([0-1]?[0-9]|2[0-3]):[0-5][0-9]$"
+        print(number)
+        if re.match(tpl, number) is not None:
+            return number
+        else:
+            raise forms.ValidationError("Формат времени обязан быть XX:XX-XX:XX")

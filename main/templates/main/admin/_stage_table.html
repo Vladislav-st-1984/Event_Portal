@@ -1,0 +1,113 @@
+{# TODO: Счётчик участников. Черновик для мероприятия, если оно отменилось. Создание записки на мероприятие #}
+{# TODO: Автозаполнение шаблона служебной записки (адрес мероприятия, число, само мероприятие и список участников). Просмотр списка участвующих студентов (в виде документа и в бд). #}
+    <form method="get" enctype="multipart/form-data">
+        <div class="paddi"></div>
+        <div class="bootstrap_buttons">
+
+            <button type="button" class="reset btn btn-danger" data-column="0" data-filter="">Очистить фильтры
+            </button>
+            <br>
+        </div>
+
+        <div class="booba" id="aboba">
+            <table id="stage-table" class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Заголовок</th>
+                    <th scope="col">День</th>
+                    <th scope="col">Время</th>
+                    <th scope="col">Почта для связи</th>
+                    <th scope="col">Мероприятие</th>
+                    <th scope="col">Информация об этапе</th>
+                    <th scope="col">Картинка</th>
+
+
+
+
+                    <th scope="col">Редактировать</th>
+
+                </tr>
+                </thead>
+
+                <tfoot>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Заголовок</th>
+                    <th scope="col">День</th>
+                    <th scope="col">Время</th>
+                    <th scope="col">Почта для связи</th>
+                    <th scope="col">Мероприятие</th>
+                    <th scope="col">Информация об этапе</th>
+                    <th scope="col">Картинка</th>
+
+                    <th>Редактировать</th>
+                </tr>
+                <tr>
+                    <th colspan="10" class="ts-pager">
+                        <div class="form-inline">
+                            <div class="btn-group btn-group-sm mx-1" role="group">
+                                <button type="button" class="btn btn-secondary first" title="В начало">⇤
+                                </button>
+                                <button type="button" class="btn btn-secondary prev" title="Прошлая страница">←
+                                </button>
+                            </div>
+                            <span class="pagedisplay"></span>
+                            <div class="btn-group btn-group-sm mx-1" role="group">
+                                <button type="button" class="btn btn-secondary next" title="Следующая страница">
+                                    →
+                                </button>
+                                <button type="button" class="btn btn-secondary last" title="В конец">⇥</button>
+                            </div>
+                            <select class="form-control-sm custom-select px-1 pagesize" title="Кол-во записей">
+                                <option selected="selected" value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="all">Все</option>
+                            </select>
+                            <select class="form-control-sm custom-select px-4 mx-1 pagenum"
+                                    title="Номер страницы"></select>
+                        </div>
+                    </th>
+                </tr>
+                </tfoot>
+
+                <tbody>
+
+                {% for i in Stage %}
+
+                    <tr class="table-light">
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <th>{{ i.pk }}</th>
+                        <td>{{ i.title }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.time }}</td>
+                        <td>{{ i.contact_email }}</td>
+                        <td>{{ i.event }}</td>
+                        <td>{{ i.information }}</td>
+                        <td><img src="{{ i.img.url }}" width="100" height="100"/></td>
+
+                        <td>
+                            <button type="button" class="update-stage btn btn-sm btn-primary"
+                                    data-form-url="{% url 'update_stage' i.pk %}">
+                                Редактировать
+                            </button>
+
+                            <button id="del_z" name="btn_{{ i.pk }}" data-form-url="{{ i.pk }}" type="button" class="del_z btn btn-danger">Удалить
+
+                            </button>
+                            <button id="del_zz{{ i.pk }}" name="btn_{{ i.pk }}"  type="submit" class="hid_btn">Удалить
+                            </button>
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </form>
+

@@ -4,15 +4,15 @@ from bootstrap_modal_forms.generic import BSModalCreateView, BSModalLoginView, B
 from django.contrib.auth import login, logout, authenticate
 from django.db.models import Q
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 ## регистрация пользователя
 from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, TemplateView, ListView, DetailView
 
-from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEventsForm
-from main.models import Users, Event
+from main.forms import CreateUserForm, LoginUserForm, UpdateProfile, UpdateEventsForm, UpdateStageForm
+from main.models import Users, Event, Stage
 from main.utils import DataMixin
 
 ## Импорт Логгера
@@ -171,19 +171,24 @@ class EventList(DataMixin, TemplateView):
             return dict(list(context.items()) + list(c_def.items()))
 
 
-class EventDetail(DataMixin, DetailView):
+class EventDetail(DataMixin, TemplateView):
     template_name = "main/Eventsinfo.html"
-    context_object_name = "event"
-    model = Event
+    # context_object_name = "event"
+    # model = Event
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_content(title="Подробная инфа!")
+
+        event = Event.objects.get(pk=self.kwargs["pk"])
+        stages = event.stage_set.all()
+
+        c_def = self.get_user_content(title="Подробная инфа!", event=event, stages=stages)
         return dict(list(context.items()) + list(c_def.items()))
 
     # def get_queryset(self):
-    #     # event = get_object_or_404(Event, pk=self.kwargs["pk"])
-    #     return Event.objects.filter(pk=self.kwargs["pk"])
+    #     event = get_object_or_404(Event, pk=self.kwargs["pk"])
+    #     # return Event.objects.filter(pk=self.kwargs["pk"])
+    #     return event
 
 
 
@@ -260,6 +265,67 @@ class UpdateEvent(DataMixin, BSModalUpdateView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_content(title="Обновление данных мероприятия")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def form_valid(self, form):
+        if self.request.POST.get('asyncUpdate') == 'True':
+            form.save()
+        return super().form_valid(form)
+
+
+
+
+## Создание этапа
+class CreateStage(BSModalCreateView):
+    form_class = UpdateStageForm
+    template_name = 'main/admin/create_stage.html'
+    success_url = reverse_lazy('list_stage')
+
+
+def stage(request):
+    data = dict()
+    if request.method == 'GET':
+        stages = Event.objects.all()
+        # asyncSettings.dataKey = 'table'
+        data['tables'] = render_to_string(
+            'main/admin/_stage_table.html',
+            {'Stage': stages},
+            request=request
+        )
+        return JsonResponse(data)
+
+
+## Список мероприятия
+class ListStage(DataMixin, ListView):
+    model = Event
+    template_name = "main/admin/list_stage.html"
+    context_object_name = "Stage"
+    queryset = Stage.objects.all()
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_content(title="Список этапов")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def get(self, request, *args, **kwargs):
+        for key in request.GET.keys():
+            if key.startswith('btn_'):
+                btn_pk = key[4:]
+                record = Stage.objects.get(id=btn_pk)
+                record.delete()
+        return super(ListStage, self).get(request, *args, **kwargs)
+
+
+## Обновление мероприятия
+class UpdateStage(DataMixin, BSModalUpdateView):
+    model = Stage
+    form_class = UpdateStageForm
+    template_name = 'main/admin/update_stage.html'
+    success_url = reverse_lazy('list_stage')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_content(title="Обновление данных этапа")
         return dict(list(context.items()) + list(c_def.items()))
 
     def form_valid(self, form):

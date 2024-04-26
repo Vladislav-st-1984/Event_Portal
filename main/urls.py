@@ -21,4 +21,10 @@ urlpatterns = [
     path('create_event', CreateEvent.as_view(), name='create_event'),
 
 
+    path('update_stage/<pk>', UpdateStage.as_view(), name='update_stage'),
+    path('list_stage', ListStage.as_view(), name='list_stage'),
+    path('stage', stage, name='stage'),
+    path('create_stage', CreateStage.as_view(), name='create_stage'),
+
+
 ]
