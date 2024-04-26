@@ -43,7 +43,7 @@ class UpdateProfile(ClassStyleForm):
 class UpdateEventsForm(BsClassStyleForm):
     class Meta:
         model = Event
-        fields = ['date', 'time', 'address', 'title', 'information', 'contact_phone', 'contact_email', 'contact_website', 'googleMap_address_link']
+        fields = ['date', 'time', 'address', 'title', 'information', 'contact_phone', 'contact_email', 'contact_website', 'googleMap_address_link', 'img']
         widgets = {
             "date": forms.DateInput(attrs={'class': 'form-control datepicker mr-2', 'id': 'datepicker', }),
         }

@@ -65,6 +65,7 @@ class Event(models.Model):
     contact_email = models.EmailField("Почта для связи", blank=True, null=True)
     contact_website = models.CharField('Вебсайт мероприятия', max_length=250, blank=True, null=True)
     googleMap_address_link = models.TextField('Ссылка на гугл карту', blank=True, null=True)
+    img = models.ImageField('Изображение', upload_to='EventsImg/%Y/%m/%d/', default='EventsImg/default/kot.png')
 
     class Meta:
         verbose_name = 'Мероприятие'
