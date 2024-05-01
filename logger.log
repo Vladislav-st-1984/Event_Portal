@@ -422,3 +422,22 @@
 2024-04-27 01:46:17 main.views 15972 views.py logout_user INFO info
 2024-04-27 01:46:17 main.views 15972 views.py logout_user DEBUG debig
 2024-04-27 01:46:17 main.views 15972 views.py get_context_data INFO 
+2024-04-27 14:02:51 main.views 15796 views.py get_context_data INFO 
+2024-04-27 14:03:25 main.views 15796 views.py get_context_data INFO 
+2024-04-27 14:04:11 main.views 15796 views.py get_context_data INFO 
+2024-04-27 14:52:19 main.views 16032 views.py get_context_data INFO 
+2024-04-27 14:54:44 main.views 16032 views.py get_context_data INFO 
+2024-04-27 15:39:13 main.views 6404 views.py logout_user INFO info
+2024-04-27 15:39:13 main.views 6404 views.py logout_user DEBUG debig
+2024-04-27 15:39:14 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:39:59 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:40:02 main.views 6404 views.py form_valid DEBUG Юзер nn@mpt.ru зарегестрировался
+2024-04-27 15:40:02 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:41:34 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:41:59 main.views 6404 views.py logout_user INFO info
+2024-04-27 15:41:59 main.views 6404 views.py logout_user DEBUG debig
+2024-04-27 15:41:59 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:42:05 main.views 6404 views.py get_success_url INFO Юзер  залогинился
+2024-04-27 15:42:05 main.views 6404 views.py get_context_data INFO 
+2024-04-27 15:42:06 main.views 6404 views.py get_success_url INFO Юзер None залогинился
+2024-04-27 15:42:06 main.views 6404 views.py get_context_data INFO 

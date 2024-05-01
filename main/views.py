@@ -176,6 +176,7 @@ class EventDetail(DataMixin, TemplateView):
     # context_object_name = "event"
     # model = Event
 
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -184,6 +185,16 @@ class EventDetail(DataMixin, TemplateView):
 
         c_def = self.get_user_content(title="Подробная инфа!", event=event, stages=stages)
         return dict(list(context.items()) + list(c_def.items()))
+
+    def post(self, request, *args, **kwargs):
+        event = Event.objects.get(pk=self.kwargs['pk'])
+        user = request.user
+        print(f"user - {user}")
+        print(f"event - {event}")
+
+        event.user_id.add(user)
+
+        return super(EventDetail, self).get(request, *args, **kwargs)
 
     # def get_queryset(self):
     #     event = get_object_or_404(Event, pk=self.kwargs["pk"])

@@ -263,6 +263,13 @@
         </div>
     </section>
 
+    <form action="" method="post">
+    {% csrf_token %}
+        <div style="margin-left: 145px;">
+            <button type="submit" value="Update" class="btn btn-success">Обновить</button>
+        </div>
+    </form>
+
     <!-- Contact Section End -->
 
 {% endblock %}

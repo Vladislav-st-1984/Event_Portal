@@ -67,6 +67,8 @@ class Event(models.Model):
     googleMap_address_link = models.TextField('Ссылка на гугл карту', blank=True, null=True)
     img = models.ImageField('Изображение', upload_to='EventsImg/%Y/%m/%d/', default='EventsImg/default/kot.png')
 
+    user_id = models.ManyToManyField(Users, related_name='user_id')
+
     class Meta:
         verbose_name = 'Мероприятие'
         verbose_name_plural = "Мероприятия"

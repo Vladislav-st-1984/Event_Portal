@@ -34,10 +34,11 @@ class BsClassStyleForm(BSModalModelForm):
         super(BsClassStyleForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
+
 class UpdateProfile(ClassStyleForm):
     class Meta:
         model = Users
-        fields = ['first_name', 'last_name', 'middle_name', "email", "stud_email", "phone"]
+        fields = ['first_name', 'last_name', 'middle_name', "email", "stud_email", "phone", 'avatar']
 
 
 class UpdateEventsForm(BsClassStyleForm):

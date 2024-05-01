@@ -23,6 +23,7 @@
                     <th scope="col">Номер телефона для связи</th>
                     <th scope="col">Почта для связи</th>
                     <th scope="col">Вебсайт мероприятия</th>
+                    <th scope="col">Кол-во участников</th>
                     <th scope="col">Ссылка на гугл карту</th>
                     <th scope="col">Картинка</th>
 
@@ -44,13 +45,14 @@
                     <th scope="col">Номер телефона для связи</th>
                     <th scope="col">Почта для связи</th>
                     <th scope="col">Вебсайт мероприятия</th>
+                    <th scope="col">Кол-во участников</th>
                     <th scope="col">Ссылка на гугл карту</th>
                     <th scope="col">Картинка</th>
 
                     <th>Редактировать</th>
                 </tr>
                 <tr>
-                    <th colspan="9" class="ts-pager">
+                    <th colspan="10" class="ts-pager">
                         <div class="form-inline">
                             <div class="btn-group btn-group-sm mx-1" role="group">
                                 <button type="button" class="btn btn-secondary first" title="В начало">⇤
@@ -93,6 +95,7 @@
                         <td>{{ i.contact_phone }}</td>
                         <td>{{ i.contact_email }}</td>
                         <td>{{ i.contact_website }}</td>
+                        <td>{{ i.user_id.all.count }}</td>
                         <td>{{ i.googleMap_address_link }}</td>
                         <td><img src="{{ i.img.url }}" width="100" height="100"/></td>
 
