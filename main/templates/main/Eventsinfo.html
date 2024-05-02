@@ -195,7 +195,7 @@
                                             <div class="sc-text">
                                                 <h4>{{ stage.information }}</h4>
                                                 <ul>
-                                                    <li><i class="fa fa-user"></i> Информация о этапе</li>
+                                                    <li><i class="fa fa-user"></i></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -221,6 +221,23 @@
         </div>
     </section>
 
+    <!-- Newslatter Section Begin -->
+    <section class="newslatter-section" style="background-color:#2A3457">
+        <div class="container">
+            <div class="newslatter-inner set-bg" data-setbg="img/newslatter-bg.jpg" style="background-image: url(&quot;img/newslatter-bg.jpg&quot;);">
+                <div class="ni-text">
+                    <h3>Участие в мероприятии</h3>
+                    <p>Для участия в мероприятии просто нажмите кнопку!</p>
+                </div>
+                <form action="" class="ni-form" method="post">
+                    {% csrf_token %}
+{#                    <input type="text" placeholder="Your email">#}
+                    <button type="submit" value="Update">Участвовать</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Newslatter Section End -->
 
     <!-- Contact Section Begin -->
     <section class="contact-section spad" style="background-color: #2A3457">
@@ -262,7 +279,7 @@
             </div>
         </div>
     </section>
-
+<!-- Для кнопки регистрации -->
     <form action="" method="post">
     {% csrf_token %}
         <div style="margin-left: 145px;">

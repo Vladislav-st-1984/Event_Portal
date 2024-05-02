@@ -172,6 +172,7 @@ ol {
 .price-item .tr-tag,
 .schedule-tab .nav-tabs .nav-item .nav-link.active,
 .site-btn {
+    font-size: 20px !important;
     background-color: #2A3457
 }
 
@@ -990,13 +991,13 @@ ol {
 }
 
 .newslatter-inner .ni-text h3 {
-    color: #ffffff;
+    color: #A4A4BF;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
 .newslatter-inner .ni-text p {
-    color: #ffffff;
+    color: #A4A4BF;
     margin-bottom: 0;
 }
 
@@ -1040,17 +1041,18 @@ ol {
 }
 
 .newslatter-inner .ni-form button {
-    width: 128px;
-    height: 40px;
+    width: 180px;
+    height: 60px;
     text-align: center;
-    border: none;
-    color: #ffffff;
+    border-color: #A4A4BF;
+    border-bottom-width: 5px;
+    color: #888C46;
     font-size: 16px;
     font-weight: 600;
     border-radius: 50px;
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: -5px;
+    top: -3px;
 }
 
 /*---------------------
