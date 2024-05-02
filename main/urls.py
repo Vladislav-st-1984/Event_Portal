@@ -27,4 +27,9 @@ urlpatterns = [
     path('create_stage', CreateStage.as_view(), name='create_stage'),
 
 
+    path('show_list_users_events', ShowListUsersEvents.as_view(), name='show_list_users_events'),
+
+    path('show_list_events_for_user/<pk>', ShowListEventsForUser.as_view(), name='show_list_events_for_user'),
+
+
 ]
