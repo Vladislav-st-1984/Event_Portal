@@ -344,3 +344,50 @@ class UpdateStage(DataMixin, BSModalUpdateView):
             form.save()
         return super().form_valid(form)
 
+
+
+## Список пользователей и эвентов, на которые они зарегались
+class ShowListUsersEvents(DataMixin, ListView):
+    model = Event
+    template_name = "main/admin/list_users_events.html"
+    context_object_name = "Event"
+    success_url = reverse_lazy('show_list_users_events')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_content(title="Список участников, зарегистрировашихся на мероприятие")
+        return dict(list(context.items()) + list(c_def.items()))
+
+    def get_queryset(self):
+        return Event.objects.all().order_by('-id')
+
+    def get(self, request, *args, **kwargs):
+        for key in request.GET.keys():
+            if key.startswith('btn_'):
+                str_args = key[4:]
+                list_args = str_args.split("user_id")
+                event_id, user_id = list_args[0], list_args[1]
+                event = Event.objects.get(id=event_id)
+                user = Users.objects.get(id=user_id)
+                event.user_id.remove(user)
+                # record.save()
+
+        return super(ShowListUsersEvents, self).get(request, *args, **kwargs)
+
+
+
+## Список эвентов для каждого пользователя
+class ShowListEventsForUser(DataMixin, TemplateView):
+    template_name = "main/user/list_events_for_user.html"
+    success_url = reverse_lazy('show_list_events_for_user')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        user = Users.objects.get(pk=self.kwargs["pk"])
+        events = user.user_id.all()
+
+        now = datetime.date.today()
+
+        c_def = self.get_user_content(title="Список участников, зарегистрировашихся на мероприятие", Event=events, now=now)
+        return dict(list(context.items()) + list(c_def.items()))

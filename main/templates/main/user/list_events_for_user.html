@@ -60,10 +60,12 @@
                 <thead class="thead-dark">
                 <tr>
                     <th class="text-center" scope="col">№</th>
-                    <th class="text-center" scope="col">ФИО пользователя</th>
-                    <th class="text-center" scope="col">Почта пользователя</th>
                     <th class="text-center" scope="col">Название мероприятия</th>
-                    <th class="text-center" scope="col">Отменить регистрацию</th>
+                    <th scope="col">День</th>
+                    <th scope="col">Время</th>
+                    <th scope="col">Адрес</th>
+                    <th scope="col">Информация о мероприятии</th>
+                    <th scope="col">Номер телефона для связи</th>
 
                 </tr>
                 </thead>
@@ -71,13 +73,15 @@
                 <tfoot>
                 <tr>
                     <th class="text-center" scope="col">№</th>
-                    <th class="text-center" scope="col">ФИО пользователя</th>
-                    <th class="text-center" scope="col">Почта пользователя</th>
                     <th class="text-center" scope="col">Название мероприятия</th>
-                    <th class="text-center" scope="col">Отменить регистрацию</th>
+                    <th scope="col">День</th>
+                    <th scope="col">Время</th>
+                    <th scope="col">Адрес</th>
+                    <th scope="col">Информация о мероприятии</th>
+                    <th scope="col">Номер телефона для связи</th>
                 </tr>
                 <tr>
-                    <th colspan="5" class="ts-pager">
+                    <th colspan="7" class="ts-pager">
                         <div class="form-inline">
                             <div class="btn-group btn-group-sm mx-1" role="group">
                                 <button type="button" class="btn btn-secondary first" title="В начало">⇤
@@ -106,18 +110,23 @@
                 </tfoot>
                 <tbody>
                 {% for event in Event %}
-                    {% for user in event.user_id.all %}
-                        <tr>
-                            <th class="text-center" scope="row">{{ forloop.counter }}</th>
-                            <td class="text-center">{{ user.last_name }} {{ user.first_name }} {{ user.middle_name }}</td>
-                            <td class="text-center">{{ user.email }}</td>
-                            <td class="text-center">{{ event.title }}</td>
+                    {% if event.date|date < now|date %}
+                        <tr class="table-warning">
+                    {% elif event.date|date == now|date %}
+                        <tr class="table-light">
+                    {% elif event.date|date > now|date %}
+                        <tr class="table-success">
+                    {% endif %}
+{#                    <tr>#}
+                        <th class="text-center" scope="row">{{ forloop.counter }}</th>
+                        <td>{{ event.title }}</td>
+                        <td>{{ event.date }}</td>
+                        <td>{{ event.time }}</td>
+                        <td>{{ event.address }}</td>
+                        <td>{{ event.information|linebreaksbr }}</td>
+                        <td>{{ event.contact_phone }}</td>
 
-                            <td class="text-center">
-                                <button name="btn_{{ event.pk }}user_id{{ user.pk }}" type="submit" class="btn btn-danger">Отклонить</button>
-                            </td>
-                        </tr>
-                    {% endfor %}
+                    </tr>
                 {% endfor %}
                 </tbody>
 
