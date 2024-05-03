@@ -443,3 +443,14 @@
 2024-04-27 15:42:06 main.views 6404 views.py get_context_data INFO 
 2024-05-03 01:27:12 main.views 16128 views.py get_context_data INFO 
 2024-05-03 01:43:02 main.views 16120 views.py get_context_data INFO 
+2024-05-03 02:57:20 main.views 19908 views.py get_context_data INFO 
+2024-05-03 02:57:27 main.views 19908 views.py logout_user INFO info
+2024-05-03 02:57:27 main.views 19908 views.py logout_user DEBUG debig
+2024-05-03 02:57:27 main.views 19908 views.py get_context_data INFO 
+2024-05-03 02:57:32 main.views 19908 views.py get_success_url INFO Юзер  залогинился
+2024-05-03 02:57:32 main.views 19908 views.py get_context_data INFO 
+2024-05-03 02:57:33 main.views 19908 views.py get_success_url INFO Юзер None залогинился
+2024-05-03 02:57:33 main.views 19908 views.py get_context_data INFO 
+2024-05-03 03:04:45 main.views 19908 views.py logout_user INFO info
+2024-05-03 03:04:45 main.views 19908 views.py logout_user DEBUG debig
+2024-05-03 03:04:45 main.views 19908 views.py get_context_data INFO 
