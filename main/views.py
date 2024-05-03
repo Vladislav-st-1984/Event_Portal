@@ -182,34 +182,10 @@ class EventDetail(DataMixin, TemplateView):
 
         event = Event.objects.get(pk=self.kwargs["pk"])
         stages = event.stage_set.all()
-
-        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        now_format = "%Y-%m-%d %H:%M:%S"
-        now_out = datetime.datetime.strptime(now, now_format)
-
-
-        event_datetime = f"{event.date}T{event.time[:5]}:00"
-        event_datetime_format = "%Y-%m-%dT%H:%M:%S"
-        event_out = datetime.datetime.strptime(event_datetime, event_datetime_format)
-
-        # print(f"now - {now}")
-        # print(f"now_out - {now_out}")
-        #
-        # print(f"event_datetime - {event_datetime}")
-        # print(f"event_out - {event_out}")
-
-        minus = event_out - now_out
-        hours = minus.seconds // 3600
-        minutes = (minus.seconds // 60) % 60
-        seconds = minus.seconds - hours*3600 - minutes*60
-        # print(f"minus - {minus}")
-        # print(f"minus_d - {minus.days}")
-        # print(f"minus_h - {hours}")
-        # print(f"minus_m - {minutes}")
-        # print(f"minus_s - {seconds}")
+        event_datetime = f"{event.date.strftime('%Y/%m/%d')} {event.time[:5]}:00"
 
         # now.day, now.hour, now.minute, now.second
-        c_def = self.get_user_content(title="Подробная инфа!", event=event, stages=stages, days=minus.days, hours=hours, minutes=minutes, seconds=seconds)
+        c_def = self.get_user_content(title="Подробная инфа!", event=event, stages=stages, event_out=event_datetime)
         return dict(list(context.items()) + list(c_def.items()))
 
     def post(self, request, *args, **kwargs):

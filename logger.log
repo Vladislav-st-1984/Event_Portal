@@ -454,3 +454,4 @@
 2024-05-03 03:04:45 main.views 19908 views.py logout_user INFO info
 2024-05-03 03:04:45 main.views 19908 views.py logout_user DEBUG debig
 2024-05-03 03:04:45 main.views 19908 views.py get_context_data INFO 
+2024-05-03 12:59:51 main.views 9812 views.py get_context_data INFO 
