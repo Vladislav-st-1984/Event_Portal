@@ -96,22 +96,23 @@
                         <h3>Считайте секунды <br/>До мероприятия!</h3>
                     </div>
                 </div>
+                <div hidden id="current_time" name="10-0-0 15:20:25"></div>
                 <div class="col-lg-8">
                     <div class="cd-timer" id="countdown">
                         <div class="cd-item">
-                            <span>40</span>
+                            <span>10</span>
                             <p>Days</p>
                         </div>
                         <div class="cd-item">
-                            <span>18</span>
+                            <span>{{ hours }}</span>
                             <p>Hours</p>
                         </div>
                         <div class="cd-item">
-                            <span>46</span>
+                            <span>{{ minutes }}</span>
                             <p>Minutes</p>
                         </div>
                         <div class="cd-item">
-                            <span>32</span>
+                            <span>{{ seconds }}</span>
                             <p>Seconds</p>
                         </div>
                     </div>
